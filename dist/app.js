@@ -63,7 +63,7 @@ document.querySelector('#copy-request').addEventListener('click',async()=>{try{a
 
 // Tactile, keyboard-accessible fidget key. No sound or external side effects.
 const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
-const fidget=document.querySelector('#fidget');let fidgetClicks=0;
+const fidget=document.querySelector('#fidget');
 for(const eventName of ['selectstart','dragstart']){fidget.addEventListener(eventName,event=>event.preventDefault())}
 function applyTheme(theme){
  document.documentElement.dataset.theme=theme;
@@ -98,15 +98,21 @@ async function switchTheme(){
  }catch{ /* A skipped browser transition still applies the selected theme. */ }
  finally{await transition.finished.catch(()=>{});themeTransitionRunning=false}
 }
-fidget.addEventListener('click',()=>{
- switchTheme();
- fidgetClicks++;
+let keyActivation=0;
+fidget.addEventListener('click',async()=>{
+ const activation=++keyActivation;
  const face=fidget.querySelector('.key-face');
  face.getAnimations().forEach(animation=>animation.cancel());
- face.animate(reducedMotion.matches?[{background:'#80b9ff'},{background:'#1c79ea'}]:[{transform:'translateY(9px) scale(.94)'},{transform:'translateY(-3px)',offset:.42},{transform:'translateY(1px)',offset:.7},{transform:'translateY(0)'}],{duration:reducedMotion.matches?120:560,easing:'cubic-bezier(.2,.7,.2,1)'});
- if(reducedMotion.matches)return;
- for(let i=0;i<8;i++){const particle=document.createElement('span');particle.className='fidget-particle';particle.setAttribute('aria-hidden','true');const angle=(i/8)*Math.PI*2+fidgetClicks*.35;const distance=60+(i%3)*12;particle.style.background=i%2?'#8fc5ff':'#1c79ea';fidget.append(particle);const motion=particle.animate([{transform:'translate(-50%,-50%) scale(0)',opacity:1},{transform:`translate(${Math.cos(angle)*distance}px,${Math.sin(angle)*distance}px) rotate(${i*60}deg) scale(1)`,opacity:.9,offset:.55},{transform:`translate(${Math.cos(angle)*distance*1.3}px,${Math.sin(angle)*distance*1.3+20}px) rotate(${i*80}deg) scale(.2)`,opacity:0}],{duration:650,easing:'cubic-bezier(.15,.65,.3,1)'});motion.onfinish=()=>particle.remove()}
- const ring=document.createElement('span');ring.className='fidget-ring';ring.setAttribute('aria-hidden','true');fidget.append(ring);const pulse=ring.animate([{opacity:.5,transform:'scale(.8)'},{opacity:0,transform:'scale(1.6)'}],{duration:450,easing:'ease-out'});pulse.onfinish=()=>ring.remove();
+ if(!reducedMotion.matches){
+  // Release the depressed cap before the browser captures the theme transition.
+  const release=face.animate([
+   {transform:'translateY(14%) scale(.96)'},
+   {transform:'translateY(-2%) scale(1)',offset:.72},
+   {transform:'translateY(0) scale(1)'}
+  ],{duration:340,easing:'cubic-bezier(.2,.65,.3,1)'});
+  try{await release.finished}catch{return}
+ }
+ if(activation===keyActivation)switchTheme();
 });
 const scene=document.querySelector('.hero-scene');
 document.querySelector('.hero').addEventListener('pointermove',event=>{if(reducedMotion.matches||event.pointerType==='touch')return;const r=event.currentTarget.getBoundingClientRect();scene.style.setProperty('--scene-x',`${(event.clientX/r.width-.5)*12}px`);scene.style.setProperty('--scene-y',`${((event.clientY-r.top)/r.height-.5)*10}px`)});

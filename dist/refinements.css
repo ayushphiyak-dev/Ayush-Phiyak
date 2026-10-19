@@ -349,3 +349,43 @@ html[data-theme=dark] .interests span:hover{transform:rotate(-3deg) translateY(-
 html[data-theme=dark] .hero-scene::before{
  background:linear-gradient(180deg,#1c79ea3b,transparent 24%);
 }
+
+/* Molded mechanical key: fixed frame and bevel, travelling portrait cap. */
+.avatar-key,html[data-theme=dark] .avatar-key{
+ --key-cap-fill:linear-gradient(100deg,#4da3ff 0%,#1c79e9 25%,#1c79e9 75%,#1673e5);
+ background:#292929;
+ border-radius:7% / 12%;
+ box-shadow:none;
+}
+html[data-theme=dark] .avatar-key{box-shadow:0 0 0 1px #777}
+.key-shell{
+ position:absolute;
+ inset:4.5% 3.5% 5%;
+ overflow:hidden;
+ pointer-events:none;
+ border-radius:40% 40% 7% 7% / 18% 18% 10% 10%;
+ background:linear-gradient(135deg,#50a4ff,#1c79ea 36%,#1b78e9 66%,#3a94f8);
+ box-shadow:inset 0 1px 1px #7cbdff99;
+}
+.key-shell::before,.key-shell::after{content:"";position:absolute;inset:0;pointer-events:none}
+.key-shell::before{clip-path:polygon(0 13%,16% 0,19% 67%,0 98%);background:linear-gradient(155deg,#65b1ff,#2389f4 35%,#1474e5 52%,#3c98fa)}
+.key-shell::after{clip-path:polygon(84% 0,100% 13%,100% 98%,81% 67%);background:linear-gradient(205deg,#57aaff,#1c7eee 44%,#409bfc)}
+.avatar-key .key-face,html[data-theme=dark] .avatar-key .key-face{
+ inset:5% 16% 32%;
+ border-radius:8% / 13%;
+ border:1px solid #7ebdff;
+ background:var(--key-cap-fill);
+ box-shadow:inset 0 1px 1px #b5dbff66,0 1px 1px #1166c588;
+ transform:translateY(0) scale(1);
+ transition:transform 90ms ease-out;
+ transform-origin:50% 55%;
+ will-change:transform;
+}
+.avatar-key .key-portrait{width:42%;height:87%;aspect-ratio:auto}
+.avatar-key:hover .key-face{transform:translateY(0) scale(1);background:var(--key-cap-fill)}
+.avatar-key:active .key-face,html[data-theme=dark] .avatar-key:active .key-face{transform:translateY(14%) scale(.96)}
+@media(min-width:1101px){
+ .avatar-key,html[data-theme=dark] .avatar-key{left:44.286vw;top:6.429vw;width:6.857vw;height:4.214vw}
+ .theme-hint{left:1.429vw;top:2.643vw}
+}
+@media(prefers-reduced-motion:reduce){.avatar-key:active .key-face,html[data-theme=dark] .avatar-key:active .key-face{transform:none}}
