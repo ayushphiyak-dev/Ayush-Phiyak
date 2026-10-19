@@ -243,3 +243,5 @@ html[data-theme=dark] .logo-card :focus-visible{outline-color:#292929}
 /* Decorative face stays part of the interactive theme key. */
 .avatar-key,.avatar-key *{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
 .avatar-key img{-webkit-user-drag:none;pointer-events:none}
+
+.avatar-key .key-portrait{display:block;height:76%;aspect-ratio:563/687;max-width:70%;background:url("assets/hero-avatar.webp") center / contain no-repeat;pointer-events:none}
