@@ -295,18 +295,33 @@ html[data-theme=dark] .about-copy.about-dark{display:block}
 
 /* Final proportions from the supplied hero and dark About references. */
 .hero-scene{background:linear-gradient(180deg,#ffffffbb,#fffffff5 80%),url('assets/hero-backdrop.webp') center / cover no-repeat}
-.avatar-key .key-portrait{height:100%;max-width:none}
+.avatar-key .key-portrait{height:82%;max-width:none}
+.avatar-key,html[data-theme=dark] .avatar-key{border-radius:6px;background:linear-gradient(90deg,#292929,#535353 24%,#292929 66%,#535353 90%,#292929);box-shadow:none}
+.avatar-key .key-face{inset:-1px 9px 15px 10px;border-radius:6px;border-width:1px;box-shadow:none}
+html[data-theme=dark] .avatar-key{box-shadow:0 0 0 1px #777}
 html[data-theme=dark] .interests span:hover{transform:rotate(-3deg) translateY(-4px)}
 @media (min-width:1101px){
- .hero p{margin-top:18px;font-size:16.5px}
+ .hero p{margin-top:1.286vw;margin-bottom:3.071vw;font-size:1.179vw}
  .hero h1{font-size:4.86vw;font-weight:700}
  .hero-emphasis{font-size:.975em}
- .avatar-key{left:-12px}
- .theme-hint{left:18%;top:53%;font-size:18px}
- .theme-hint svg{margin-left:67px}
- html[data-theme=dark] .about h2{font-size:7.8vw;font-weight:600}
- html[data-theme=dark] .about-copy{font-size:23px;letter-spacing:0;margin-top:24px;margin-bottom:21px}
- html[data-theme=dark] .interests{row-gap:37px}
+ .role{font-size:1.143vw;padding:.714vw 2.071vw;min-width:12.714vw}
+ .hero .primary{font-size:1.143vw;padding:.929vw 2vw}
+ .avatar-key,html[data-theme=dark] .avatar-key{left:-.857vw;width:7.429vw;height:4.429vw;border-radius:.429vw}
+ .avatar-key .key-face{inset:-.071vw .643vw 1.071vw .714vw;border-radius:.429vw}
+ .theme-hint{left:18%;top:70%;width:10.714vw;font-size:1.143vw}
+ .theme-hint svg{width:4.643vw;height:8.571vw;margin-left:4.786vw}
+ html[data-theme=dark] .about{padding-top:4.429vw;padding-bottom:5.143vw;min-height:57.357vw}
+ html[data-theme=dark] .about .portrait{width:14.571vw;height:14.571vw;margin-top:1vw}
+ html[data-theme=dark] .about h2{font-size:7.43vw;font-weight:500;margin-top:2.714vw}
+ html[data-theme=dark] .about-copy{font-size:1.643vw;letter-spacing:0;margin-top:1.429vw;margin-bottom:1.5vw}
+ html[data-theme=dark] .interests{row-gap:2.643vw}
+ html[data-theme=dark] .interests span{min-width:11.429vw;padding:.571vw 2vw}
+ .topbar{width:46.4vw;max-width:none;height:4.32vw;padding:.6vw .72vw .6vw 1.65vw;border-radius:1.3vw}
+ .topbar .wordmark{font-size:1.72vw;letter-spacing:-.21vw;margin:0}
+ .topbar nav{position:absolute;left:42.5%;gap:2.36vw;margin:0}
+ .topbar nav a{font-size:1.57vw}
+ .topbar .say-hi{font-size:1.43vw;margin-left:auto;padding:.72vw .86vw;gap:.571vw;border-radius:.643vw}
+ .topbar .say-hi svg{width:1.643vw;height:1.643vw}
 }
 @media (min-width:701px) and (max-width:1100px){
  .avatar-key{width:100px;height:60px}
@@ -314,23 +329,20 @@ html[data-theme=dark] .interests span:hover{transform:rotate(-3deg) translateY(-
 }
 @media (max-width:700px){
  .avatar-key{width:84px;height:52px}
+ .avatar-key .key-face{inset:-1px 7px 12px 8px;border-radius:5px}
  .theme-hint{font-size:15px;width:150px}
  .theme-hint svg{height:52px;width:42px}
 }
 @media (prefers-reduced-motion:reduce){html[data-theme=dark] .interests span:hover{transform:none}}
 
-/* Edge lighting adds depth while the centre stays clear behind the copy and controls. */
+/* Blue fades down from the top and clears before the central copy and controls. */
 .hero-scene::before{
  content:"";
  position:absolute;
  inset:0;
  pointer-events:none;
- background:
-  radial-gradient(ellipse 42% 58% at -6% 0%,#1c79ea35,transparent 72%),
-  radial-gradient(ellipse 42% 58% at 106% 100%,#1c79ea2c,transparent 72%);
+ background:linear-gradient(180deg,#1c79ea2b,transparent 24%);
 }
 html[data-theme=dark] .hero-scene::before{
- background:
-  radial-gradient(ellipse 42% 58% at -6% 0%,#1c79ea59,transparent 72%),
-  radial-gradient(ellipse 42% 58% at 106% 100%,#1c79ea4d,transparent 72%);
+ background:linear-gradient(180deg,#1c79ea3b,transparent 24%);
 }
