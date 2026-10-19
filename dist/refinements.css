@@ -301,27 +301,30 @@ html[data-theme=dark] .about-copy.about-dark{display:block}
 html[data-theme=dark] .avatar-key{box-shadow:0 0 0 1px #777}
 html[data-theme=dark] .interests span:hover{transform:rotate(-3deg) translateY(-4px)}
 @media (min-width:1101px){
- .hero p{margin-top:1.286vw;margin-bottom:3.071vw;font-size:1.179vw}
- .hero h1{font-size:4.86vw;font-weight:700}
- .hero-emphasis{font-size:.975em}
- .role{font-size:1.143vw;padding:.714vw 2.071vw;min-width:12.714vw}
- .hero .primary{font-size:1.143vw;padding:.929vw 2vw}
- .avatar-key,html[data-theme=dark] .avatar-key{left:-.857vw;width:7.429vw;height:4.429vw;border-radius:.429vw}
- .avatar-key .key-face{inset:-.071vw .643vw 1.071vw .714vw;border-radius:.429vw}
- .theme-hint{left:18%;top:70%;width:10.714vw;font-size:1.143vw}
- .theme-hint svg{width:4.643vw;height:8.571vw;margin-left:4.786vw}
+ .hero-content{height:100%;padding:0}
+ .hero h1,html[data-theme=dark] .hero h1{position:absolute;left:23.5vw;top:15.5vw;width:60vw;text-align:left;font-size:4.9415vw;font-weight:400;line-height:5.9286vw;letter-spacing:-.2446vw}
+ .hero-emphasis{font-size:1em}
+ .hero p{position:absolute;left:-.143vw;top:28.5vw;width:100%;margin:0;font-size:1.1972vw;line-height:2.143vw;letter-spacing:-.0365em}
+ .role,html[data-theme=dark] .role{position:absolute;left:43.786vw;top:9.714vw;width:12.714vw;height:2.643vw;min-width:0;display:flex;align-items:center;justify-content:center;margin:0;padding:0;font-size:1.1971vw;background:linear-gradient(#3699f0,#1c79ea)}
+ .hero .primary{position:absolute;left:45.571vw;top:35.714vw;width:8.643vw;height:3.071vw;display:flex;align-items:center;justify-content:center;padding:0;font-size:1.1974vw;border-radius:.786vw}
+ .avatar-key,html[data-theme=dark] .avatar-key{position:absolute;left:43.857vw;top:6.357vw;width:7.429vw;height:4.357vw;margin:0;border-radius:.429vw}
+ .avatar-key .key-face{inset:-.1023vw .597vw .8778vw .597vw;border-radius:.4676vw;border-width:.0663vw}
+ .avatar-key .key-portrait{width:2.364vw;height:2.8846vw;aspect-ratio:auto}
+ .theme-hint{left:1.857vw;top:2.714vw;width:9.286vw;height:10vw;font-size:1.1972vw;letter-spacing:-.0325em}
+ .theme-hint svg{position:absolute;left:5.071vw;top:0;width:3.714vw;height:8.857vw;margin:0}
+ .theme-hint>span{position:absolute;left:0;top:9vw}
  html[data-theme=dark] .about{padding-top:4.429vw;padding-bottom:5.143vw;min-height:57.357vw}
  html[data-theme=dark] .about .portrait{width:14.571vw;height:14.571vw;margin-top:1vw}
  html[data-theme=dark] .about h2{font-size:7.43vw;font-weight:500;margin-top:2.714vw}
  html[data-theme=dark] .about-copy{font-size:1.643vw;letter-spacing:0;margin-top:1.429vw;margin-bottom:1.5vw}
  html[data-theme=dark] .interests{row-gap:2.643vw}
  html[data-theme=dark] .interests span{min-width:11.429vw;padding:.571vw 2vw}
- .topbar{width:46.4vw;max-width:none;height:4.32vw;padding:.6vw .72vw .6vw 1.65vw;border-radius:1.3vw}
- .topbar .wordmark{font-size:1.72vw;letter-spacing:-.21vw;margin:0}
- .topbar nav{position:absolute;left:42.5%;gap:2.36vw;margin:0}
- .topbar nav a{font-size:1.57vw}
- .topbar .say-hi{font-size:1.43vw;margin-left:auto;padding:.72vw .86vw;gap:.571vw;border-radius:.643vw}
- .topbar .say-hi svg{width:1.643vw;height:1.643vw}
+ .topbar{left:50.1429%;width:37.571vw;max-width:none;height:3.5vw;padding:0 .571vw 0 1.286vw;border-radius:1.071vw}
+ .topbar .wordmark{font-size:1.3464vw;letter-spacing:-.14vw;margin:0}
+ .topbar nav{position:absolute;left:42.5%;gap:1.929vw;margin:0}
+ .topbar nav a{font-size:1.1971vw;letter-spacing:-.05em}
+ .topbar .say-hi{width:6.5vw;height:2.571vw;justify-content:center;font-size:1.1971vw;margin-left:auto;padding:0;gap:.286vw;border-radius:.571vw}
+ .topbar .say-hi svg{width:1.571vw;height:1.571vw}
 }
 @media (min-width:701px) and (max-width:1100px){
  .avatar-key{width:100px;height:60px}
