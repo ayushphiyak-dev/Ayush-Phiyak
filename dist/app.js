@@ -68,6 +68,7 @@ for(const eventName of ['selectstart','dragstart']){fidget.addEventListener(even
 function applyTheme(theme){
  document.documentElement.dataset.theme=theme;
  const dark=theme==='dark';
+ document.querySelector('#theme-hint-text').textContent=dark?'Too much Dark??':'too much bright??';
  fidget.setAttribute('aria-pressed',String(dark));
  fidget.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');
  fidget.title=dark?'Switch to light mode':'Switch to dark mode';
