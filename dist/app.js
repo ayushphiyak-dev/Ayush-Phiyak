@@ -106,9 +106,9 @@ fidget.addEventListener('click',async()=>{
  if(!reducedMotion.matches){
   // Release the complete blue key before the browser captures the theme transition.
   const release=assembly.animate([
-   {transform:'translateY(10%) scale(.96)'},
-   {transform:'translateY(-1%) scale(1)',offset:.72},
-   {transform:'translateY(0) scale(1)'}
+   {transform:'translateY(8%)'},
+   {transform:'translateY(0)',offset:.72},
+   {transform:'translateY(0)'}
   ],{duration:340,easing:'cubic-bezier(.2,.65,.3,1)'});
   try{await release.finished}catch{return}
  }
