@@ -139,3 +139,29 @@
 .topbar{display:flex;justify-content:space-between;gap:0}.topbar .wordmark{font-size:34px;letter-spacing:-5px;margin-right:auto}.topbar nav{margin-left:auto;gap:42px}.topbar .say-hi{margin-left:28px}
 @media(max-width:700px){.topbar .wordmark{font-size:28px;letter-spacing:-4px}.topbar nav{gap:14px}.topbar .say-hi{margin-left:18px}}
 @media(max-width:360px){.topbar .wordmark{font-size:25px}.topbar nav{gap:9px}.topbar .say-hi{margin-left:10px}}
+/* Overscan the moving background to keep its edges outside the viewport. */
+.hero-scene{inset:-16px;background-size:cover}
+html[data-theme=dark]{color-scheme:dark;--paper:#141619;--ink:#f0f0f0;--muted:#aaa;--line:#444;background:#141619;color:#f0f0f0}
+html[data-theme=dark] body{background:#141619;color:#f0f0f0}
+html[data-theme=dark] .hero{background:#141619}
+html[data-theme=dark] .hero-scene{background-image:linear-gradient(#0b101bcc,#0b101bcc),url('assets/hero-art.webp')}
+html[data-theme=dark] .about,html[data-theme=dark] .portfolio-section,html[data-theme=dark] .contact{background:#141619;color:#f0f0f0}
+html[data-theme=dark] .branding{background:#292929;color:#fff}
+html[data-theme=dark] .coming-soon{background:#1c2026}
+html[data-theme=dark] .index{border-color:#555}
+html[data-theme=dark] .index a.active{background:#e7e7e7;color:#202020}
+html[data-theme=dark] .logo-card{background:#efefef;color:#292929}
+html[data-theme=dark] .contact{border-color:#555}
+html[data-theme=dark] .meeting,html[data-theme=dark] .meeting-banner{background:#141619;color:#eee;border-color:#555}
+html[data-theme=dark] .booking-calendar{border-color:#555}
+html[data-theme=dark] .contact-note p,html[data-theme=dark] .host-label,html[data-theme=dark] .meeting-meta,html[data-theme=dark] .meeting-note,html[data-theme=dark] .selected-date,html[data-theme=dark] .meeting label,html[data-theme=dark] .request-summary,html[data-theme=dark] .form-help,html[data-theme=dark] .weekdays,html[data-theme=dark] .step-title>span,html[data-theme=dark] .contact .section-number{color:#b7b7b7}
+html[data-theme=dark] .calendar button,html[data-theme=dark] .time-slots button,html[data-theme=dark] .calendar-head button{background:#272b31;color:#eee;border-color:#555}
+html[data-theme=dark] .calendar button:disabled{background:transparent;color:#737373}
+html[data-theme=dark] .calendar button[aria-pressed=true],html[data-theme=dark] .time-slots button[aria-pressed=true]{background:#1c79ea;color:white}
+html[data-theme=dark] .meeting input,html[data-theme=dark] .meeting select,html[data-theme=dark] .meeting textarea{background:#22262b;border-color:#555;color:white}
+html[data-theme=dark] .meeting input::placeholder,html[data-theme=dark] .meeting textarea::placeholder{color:#aaa}
+html[data-theme=dark] .email-options a,html[data-theme=dark] .contact-note .email{border-color:#777}
+html[data-theme=dark] .email-options a:hover{background:#eee;color:#222}
+html[data-theme=dark] .about .portrait{border-color:#292929}
+html[data-theme=dark] .copy-request{color:#79b6ff}
+
