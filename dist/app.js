@@ -64,7 +64,18 @@ document.querySelector('#copy-request').addEventListener('click',async()=>{try{a
 // Tactile, keyboard-accessible fidget key. No sound or external side effects.
 const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
 const fidget=document.querySelector('#fidget');let fidgetClicks=0;
+function applyTheme(theme){
+ document.documentElement.dataset.theme=theme;
+ const dark=theme==='dark';
+ fidget.setAttribute('aria-pressed',String(dark));
+ fidget.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');
+ fidget.title=dark?'Switch to light mode':'Switch to dark mode';
+ document.querySelector('meta[name="theme-color"]').content=dark?'#141619':'#1d7af1';
+ try{localStorage.setItem('portfolio-theme',theme)}catch{}
+}
+applyTheme(document.documentElement.dataset.theme||'light');
 fidget.addEventListener('click',()=>{
+ applyTheme(document.documentElement.dataset.theme==='dark'?'light':'dark');
  fidgetClicks++;
  const face=fidget.querySelector('.key-face'),avatar=fidget.querySelector('img');
  face.getAnimations().forEach(animation=>animation.cancel());
@@ -86,3 +97,4 @@ form.addEventListener('input',()=>{document.querySelector('#email-options').hidd
 
 function invalidatePreparedRequest(){document.querySelector('#email-options').hidden=true;document.querySelector('#copy-request').hidden=true;}
 form.addEventListener('change',invalidatePreparedRequest);document.querySelector('#calendar').addEventListener('click',invalidatePreparedRequest);slots.addEventListener('click',invalidatePreparedRequest);
+
