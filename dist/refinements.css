@@ -291,4 +291,30 @@ html[data-theme=dark] .interests span{min-width:160px;text-align:center;justify-
 .hero-scene{background:linear-gradient(180deg,#ffffff88,#fffffff5 80%),url('assets/hero-backdrop.webp') center / cover no-repeat}
 @media(min-width:1101px){.theme-hint{left:32%}.hero h1{font-weight:500;letter-spacing:-.07em}.role{letter-spacing:-.6px;min-width:178px}.hero p{letter-spacing:-.035em}html[data-theme=dark] .about h2{font-weight:500;font-size:8vw}html[data-theme=dark] .about-copy{font-size:22px;letter-spacing:-.025em;line-height:1.27}html[data-theme=dark] .about{min-height:803px}}
 html[data-theme=dark] .about-copy.about-dark{display:block}
-html[data-theme=dark] .interests .reveal{opacity:1;transform:none}
+/* Keep the interest chips' reveal and hover motion from the light About section. */
+
+/* Final proportions from the supplied hero and dark About references. */
+.hero-scene{background:linear-gradient(180deg,#ffffffbb,#fffffff5 80%),url('assets/hero-backdrop.webp') center / cover no-repeat}
+.avatar-key .key-portrait{height:100%;max-width:none}
+html[data-theme=dark] .interests span:hover{transform:rotate(-3deg) translateY(-4px)}
+@media (min-width:1101px){
+ .hero p{margin-top:18px;font-size:16.5px}
+ .hero h1{font-size:4.86vw;font-weight:700}
+ .hero-emphasis{font-size:.975em}
+ .avatar-key{left:-12px}
+ .theme-hint{left:18%;top:53%;font-size:18px}
+ .theme-hint svg{margin-left:67px}
+ html[data-theme=dark] .about h2{font-size:7.8vw;font-weight:600}
+ html[data-theme=dark] .about-copy{font-size:23px;letter-spacing:0;margin-top:24px;margin-bottom:21px}
+ html[data-theme=dark] .interests{row-gap:37px}
+}
+@media (min-width:701px) and (max-width:1100px){
+ .avatar-key{width:100px;height:60px}
+ .theme-hint{font-size:16px}
+}
+@media (max-width:700px){
+ .avatar-key{width:84px;height:52px}
+ .theme-hint{font-size:15px;width:150px}
+ .theme-hint svg{height:52px;width:42px}
+}
+@media (prefers-reduced-motion:reduce){html[data-theme=dark] .interests span:hover{transform:none}}
