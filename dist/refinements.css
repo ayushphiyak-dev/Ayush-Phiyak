@@ -350,41 +350,14 @@ html[data-theme=dark] .hero-scene::before{
  background:linear-gradient(180deg,#1c79ea3b,transparent 24%);
 }
 
-/* The black recess stays fixed; the blue bevel and portrait surface travel as one key. */
-.avatar-key,html[data-theme=dark] .avatar-key{
- --key-cap-fill:linear-gradient(100deg,#4da3ff 0%,#1c79e9 25%,#1c79e9 75%,#1673e5);
- background:#292929;
- border-radius:7% / 12%;
- box-shadow:none;
-}
-html[data-theme=dark] .avatar-key{box-shadow:0 0 0 1px #777}
+/* One painted blue key translates into a stationary, clipped black opening. */
+.avatar-key,html[data-theme=dark] .avatar-key{background:#292929;border-radius:7% / 12%;box-shadow:none}
+html[data-theme=dark] .avatar-key{box-shadow:0 0 0 1px #656565}
 .key-recess{position:absolute;inset:0;border-radius:inherit;overflow:hidden;pointer-events:none}
-.key-assembly{position:absolute;inset:0;transform:translateY(0) scale(1);transform-origin:50% 55%;transition:transform 90ms ease-out;will-change:transform;pointer-events:none}
-.key-shell{
- position:absolute;
- inset:4.5% 3.5% 5%;
- overflow:hidden;
- pointer-events:none;
- border-radius:40% 40% 7% 7% / 18% 18% 10% 10%;
- background:linear-gradient(135deg,#50a4ff,#1c79ea 36%,#1b78e9 66%,#3a94f8);
- box-shadow:inset 0 1px 1px #7cbdff99;
-}
-.key-shell::before,.key-shell::after{content:"";position:absolute;inset:0;pointer-events:none}
-.key-shell::before{clip-path:polygon(0 13%,16% 0,19% 67%,0 98%);background:linear-gradient(155deg,#65b1ff,#2389f4 35%,#1474e5 52%,#3c98fa)}
-.key-shell::after{clip-path:polygon(84% 0,100% 13%,100% 98%,81% 67%);background:linear-gradient(205deg,#57aaff,#1c7eee 44%,#409bfc)}
-.avatar-key .key-face,html[data-theme=dark] .avatar-key .key-face{
- inset:5% 16% 32%;
- border-radius:8% / 13%;
- border:1px solid #7ebdff;
- background:var(--key-cap-fill);
- box-shadow:inset 0 1px 1px #b5dbff66,0 1px 1px #1166c588;
- transform:none;
- transition:none;
-}
-.avatar-key .key-portrait{width:42%;height:87%;aspect-ratio:auto}
-.avatar-key:hover .key-face{transform:translateY(0) scale(1);background:var(--key-cap-fill)}
-.avatar-key:active .key-face,html[data-theme=dark] .avatar-key:active .key-face{transform:none}
-.avatar-key:active .key-assembly{transform:translateY(10%) scale(.96)}
+.key-assembly{position:absolute;inset:0;background:url('assets/mechanical-key.svg') center / 100% 100% no-repeat;transform:translateY(0);transition:transform 100ms ease-out;will-change:transform;pointer-events:none}
+.avatar-key:active .key-assembly{transform:translateY(8%)}
+.mobile-break{display:none}
+.hero-last{white-space:nowrap}
 @media(min-width:1101px){
  .avatar-key,html[data-theme=dark] .avatar-key{left:44.286vw;top:6.429vw;width:6.857vw;height:4.214vw}
  .theme-hint{left:1.429vw;top:2.643vw}
@@ -406,14 +379,15 @@ html[data-theme=dark] .avatar-key{box-shadow:0 0 0 1px #777}
  .hero{display:block;height:auto;min-height:0;max-height:none}
  .hero-content{height:auto;padding:120px 18px calc(38vw + 32px)}
  .role,html[data-theme=dark] .role{position:static;display:inline-flex;align-items:center;justify-content:center;width:auto;height:34px;min-width:0;margin:0 0 24px;padding:0 20px;font-size:16px;letter-spacing:-.035em}
- .hero h1,html[data-theme=dark] .hero h1{position:static;width:100%;max-width:520px;margin:0 auto;padding:0 0 86px;text-align:center;font-size:clamp(32px,9.23vw,42px);font-weight:400;line-height:1.16;letter-spacing:-.05em}
+ .hero h1,html[data-theme=dark] .hero h1{position:static;width:100%;max-width:520px;margin:0 auto;padding:0 0 78px;text-align:center;font-size:clamp(26px,8.2vw,40px);font-weight:400;line-height:1.16;letter-spacing:-.05em}
  .hero-emphasis{font-size:1em}
  .desktop-break{display:none}
+ .mobile-break{display:block}
  .avatar-key,html[data-theme=dark] .avatar-key{position:relative;left:auto;top:auto;vertical-align:middle;width:84px;height:52px;margin:0 0 0 6px}
  .theme-hint{position:absolute;left:50%;right:auto;top:calc(100% + 4px);width:140px;height:78px;margin:0;transform:translateX(-50%);font-size:13px;line-height:1.3;letter-spacing:-.025em}
  .theme-hint svg{position:absolute;left:54px;top:0;width:26px;height:54px;margin:0;transform:none}
  .theme-hint>span{position:absolute;left:0;top:56px;width:100%;margin:0;text-align:center}
- .hero p{position:static;max-width:520px;margin:24px auto 28px;font-size:16px;line-height:1.6;letter-spacing:-.02em}
+ .hero p{position:static;max-width:520px;margin:12px auto 28px;font-size:16px;line-height:1.6;letter-spacing:-.02em}
  .hero .primary{position:static;display:inline-flex;align-items:center;justify-content:center;width:auto;height:auto;min-height:44px;padding:12px 26px;font-size:16px;line-height:1.2;border-radius:10px}
  .hero-scene{inset:0;transform:none!important;background-position:center top}
  .hero-scene::after{inset:auto 0 0;height:calc(38vw + 16px);background-image:url('assets/hero-mobile-left.webp'),url('assets/hero-mobile-right.webp');background-size:33% auto,33% auto;background-position:left 12px bottom 8px,right 12px bottom 8px;background-repeat:no-repeat}
@@ -498,3 +472,22 @@ html[data-theme=dark] .avatar-key{box-shadow:0 0 0 1px #777}
  .topbar .say-hi{font-size:12px;margin-left:10px;padding:0 8px}
  .avatar-key,html[data-theme=dark] .avatar-key{width:78px;height:48px}
 }
+
+/* October 20 supplied dark hero and phone composition. */
+html[data-theme=dark] .hero-muted{color:#555;text-decoration-line:line-through;text-decoration-thickness:.055em;text-decoration-color:#555}
+html[data-theme=dark] .hero-click{color:#fff}
+@media(max-width:700px){
+ .hero-content{padding:29.2vw 5.5vw 56vw}
+ .role,html[data-theme=dark] .role{height:8.3vw;margin-bottom:4.7vw;padding:0 4vw;font-size:4.15vw}
+ .hero h1,html[data-theme=dark] .hero h1{max-width:none;font-size:8.86vw;line-height:1.22;letter-spacing:-.03em;padding-bottom:27vw}
+ .hero-last{position:relative;left:-2vw}
+ .avatar-key,html[data-theme=dark] .avatar-key{width:16.6vw;height:10.25vw;margin:0 0 0 1.8vw;vertical-align:baseline;top:.25vw}
+ .theme-hint{left:calc(100% - 3vw);right:auto;top:70%;width:28vw;height:18vw;transform:none;font-size:3.6vw;line-height:1.2}
+ .theme-hint svg{left:4.2vw;top:0;width:6.6vw;height:13.8vw}
+ .theme-hint>span{top:13vw;left:0;width:100%;white-space:nowrap}
+ .hero p{max-width:none;font-size:4.15vw;line-height:1.6;letter-spacing:-.025em;margin:0 auto 6.2vw}
+ .hero .primary{min-height:0;height:10.8vw;width:25.6vw;padding:0;font-size:4.15vw;border-radius:2.4vw}
+ .hero-scene::after{height:64vw;background-size:48% auto,50% auto;background-position:left -7vw top 0,right -4.5vw top 7vw}
+ .about{padding-top:0}
+}
+
