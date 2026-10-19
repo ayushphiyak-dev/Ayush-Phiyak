@@ -366,6 +366,9 @@ html[data-theme=dark] .avatar-key{box-shadow:0 0 0 1px #656565}
 
 /* Phone layout follows the content flow rather than desktop offsets. */
 @media(max-width:700px){
+ .hero{overflow:hidden}
+ .hero-scene{z-index:-1;overflow:hidden}
+ .hero-scene::before{z-index:0}
  .hero-mobile-laptop{display:block;position:absolute;z-index:1;pointer-events:none;width:auto;height:auto;max-width:none}
  .hero-mobile-laptop-left{left:-4vw;bottom:0;width:48vw}
  .hero-mobile-laptop-right{right:-4vw;bottom:-1vw;width:50vw}
@@ -480,7 +483,7 @@ html[data-theme=dark] .avatar-key{box-shadow:0 0 0 1px #656565}
 html[data-theme=dark] .hero-muted{color:#555;text-decoration-line:line-through;text-decoration-thickness:.055em;text-decoration-color:#555}
 html[data-theme=dark] .hero-click{color:#fff}
 @media(max-width:700px){
- .hero-content{padding:29.2vw 5.5vw 56vw}
+ .hero-content{padding:29.2vw 5.5vw 0}
  .role,html[data-theme=dark] .role{height:8.3vw;margin-bottom:4.7vw;padding:0 4vw;font-size:4.15vw}
  .hero h1,html[data-theme=dark] .hero h1{max-width:none;font-size:8.86vw;line-height:1.22;letter-spacing:-.03em;padding-bottom:27vw}
  .hero-last{position:relative;left:-2vw}
@@ -492,5 +495,14 @@ html[data-theme=dark] .hero-click{color:#fff}
  .hero .primary{min-height:0;height:10.8vw;width:25.6vw;padding:0;font-size:4.15vw;border-radius:2.4vw}
  .hero-scene::after{display:none}
  .about{padding-top:0}
+}
+
+/* Reserve space for both devices, including their complete lower edges. */
+.hero-laptops{display:none}
+@media(max-width:700px){
+ .hero-laptops{display:block;position:relative;z-index:1;width:100%;height:76vw;margin-top:-7.5vw;pointer-events:none}
+ .hero-laptops .hero-mobile-laptop{position:absolute;display:block;height:auto;max-width:none;bottom:auto;width:50vw}
+ .hero-laptops .hero-mobile-laptop-left{left:-7vw;top:0}
+ .hero-laptops .hero-mobile-laptop-right{right:-4.5vw;top:3.3vw}
 }
 
