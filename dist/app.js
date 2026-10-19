@@ -101,13 +101,13 @@ async function switchTheme(){
 let keyActivation=0;
 fidget.addEventListener('click',async()=>{
  const activation=++keyActivation;
- const face=fidget.querySelector('.key-face');
- face.getAnimations().forEach(animation=>animation.cancel());
+ const assembly=fidget.querySelector('.key-assembly');
+ assembly.getAnimations().forEach(animation=>animation.cancel());
  if(!reducedMotion.matches){
-  // Release the depressed cap before the browser captures the theme transition.
-  const release=face.animate([
-   {transform:'translateY(14%) scale(.96)'},
-   {transform:'translateY(-2%) scale(1)',offset:.72},
+  // Release the complete blue key before the browser captures the theme transition.
+  const release=assembly.animate([
+   {transform:'translateY(10%) scale(.96)'},
+   {transform:'translateY(-1%) scale(1)',offset:.72},
    {transform:'translateY(0) scale(1)'}
   ],{duration:340,easing:'cubic-bezier(.2,.65,.3,1)'});
   try{await release.finished}catch{return}
