@@ -196,3 +196,34 @@ html[data-theme=dark] .footer-signature{color:#dddeda}
 html[data-theme=dark] .footer-period{color:#6da5ff}
 html[data-theme=dark] .skip{background:#f2f1ed;color:#171b24}
 
+/* Violet/cyan night palette, with the original device artwork preserved. */
+html[data-theme=dark]{--blue:#9978ff;--paper:#101019;--ink:#f5f2ff}
+html[data-theme=dark] .hero{background:#101019}
+html[data-theme=dark] .hero-scene{background-image:url('assets/hero-devices.webp'),radial-gradient(ellipse at 12% 55%,#7452ca55,transparent 50%),radial-gradient(ellipse at 90% 30%,#168b9a40,transparent 45%),linear-gradient(145deg,#181328,#0c1420);background-size:cover;background-position:center}
+html[data-theme=dark] .hero::after{inset:0;background:radial-gradient(ellipse at 50% 100%,#8a5fff18,transparent 60%);mask-image:none}
+html[data-theme=dark] .hero-emphasis{color:#b5a0ff;background:linear-gradient(100deg,#c8b6ff 12%,#a99bff 50%,#7ce6e4 95%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+html[data-theme=dark] .hero h1{color:#f6f3ff;text-shadow:0 2px 25px #0b0b2020}
+html[data-theme=dark] .hero p{color:#c5bed6}
+html[data-theme=dark] .role{background:#282039;color:#d6c6ff;border-color:#6d568b}
+html[data-theme=dark] .hero .primary{background:#d2c2ff;color:#211833;box-shadow:0 6px 35px #9b75ff25}
+html[data-theme=dark] .hero .primary:hover{background:#b9f5f0;box-shadow:0 8px 40px #74dbcf30}
+html[data-theme=dark] .topbar{background:linear-gradient(120deg,#262131ed,#151922f2);border-color:#6b5c804d}
+html[data-theme=dark] .topbar .say-hi{background:#ab8af4;color:#191026}
+html[data-theme=dark] .avatar-key .key-face{border-color:#d0bcff;box-shadow:0 0 30px #ac7bff40}
+html[data-theme=dark] .skills span{background:#252035;color:#d2befa;border-color:#4c3f67}
+html[data-theme=dark] .about,html[data-theme=dark] .portfolio-section{background:#101019}
+html[data-theme=dark] .coming-soon{background:#181523;border-color:#393047}
+html[data-theme=dark] .contact{background:#14131d}
+html[data-theme=dark] .contact .section-number,html[data-theme=dark] .contact-note .email,html[data-theme=dark] .copy-request,html[data-theme=dark] .step-title>span{color:#c5b0ff}
+html[data-theme=dark] .calendar button[aria-pressed=true],html[data-theme=dark] .time-slots button[aria-pressed=true]{background:#b59af5;color:#20162e}
+html[data-theme=dark] .submit{background:#d2c2ff;color:#211833}
+html[data-theme=dark] .submit:hover{background:#b9f5f0}
+html[data-theme=dark] .footer{background:#0d0c14}
+html[data-theme=dark] .footer-period{color:#b99af6}
+::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+::view-transition-new(root){z-index:1}
+html.theme-fallback body{animation:theme-fade .55s ease-out}
+@keyframes theme-fade{from{opacity:.35}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){html.theme-fallback body{animation:none}}
+@media(max-width:700px){html[data-theme=dark] .hero-scene{background-size:100% auto,cover,cover,cover;background-position:center bottom,center,center,center;background-repeat:no-repeat}}
+
