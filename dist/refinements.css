@@ -318,3 +318,19 @@ html[data-theme=dark] .interests span:hover{transform:rotate(-3deg) translateY(-
  .theme-hint svg{height:52px;width:42px}
 }
 @media (prefers-reduced-motion:reduce){html[data-theme=dark] .interests span:hover{transform:none}}
+
+/* Edge lighting adds depth while the centre stays clear behind the copy and controls. */
+.hero-scene::before{
+ content:"";
+ position:absolute;
+ inset:0;
+ pointer-events:none;
+ background:
+  radial-gradient(ellipse 42% 58% at -6% 0%,#1c79ea35,transparent 72%),
+  radial-gradient(ellipse 42% 58% at 106% 100%,#1c79ea2c,transparent 72%);
+}
+html[data-theme=dark] .hero-scene::before{
+ background:
+  radial-gradient(ellipse 42% 58% at -6% 0%,#1c79ea59,transparent 72%),
+  radial-gradient(ellipse 42% 58% at 106% 100%,#1c79ea4d,transparent 72%);
+}
