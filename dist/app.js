@@ -70,7 +70,7 @@ function applyTheme(theme){
  fidget.setAttribute('aria-pressed',String(dark));
  fidget.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');
  fidget.title=dark?'Switch to light mode':'Switch to dark mode';
- document.querySelector('meta[name="theme-color"]').content=dark?'#101019':'#1d7af1';
+ document.querySelector('meta[name="theme-color"]').content=dark?'#292929':'#1d7af1';
  try{localStorage.setItem('portfolio-theme',theme)}catch{}
 }
 applyTheme(document.documentElement.dataset.theme||'light');

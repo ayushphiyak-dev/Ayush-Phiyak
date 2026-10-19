@@ -142,88 +142,81 @@
 /* Overscan the moving background to keep its edges outside the viewport. */
 .hero-scene{inset:-16px;background-size:cover}
 /* Night edition: ink canvas, electric-blue accents, unaltered artwork. */
-html[data-theme=dark]{color-scheme:dark;--paper:#0c0d10;--ink:#f2f1ed;--muted:#a4a5ad;--line:#303137;background:var(--paper);color:var(--ink)}
-html[data-theme=dark] body{background:#0c0d10;color:#f2f1ed}
-html[data-theme=dark] .hero{background:#090b10;border-bottom:1px solid #272c38}
-html[data-theme=dark] .hero-scene{background:radial-gradient(ellipse at 77% 22%,#1849b52e,transparent 44%),radial-gradient(ellipse at 18% 78%,#1556bd1c,transparent 42%),linear-gradient(135deg,#0b101b,#090b10 56%);}
+html[data-theme=dark]{color-scheme:dark;--paper:#292929;--ink:#fff;--muted:#ccc;--line:#555;background:var(--paper);color:var(--ink)}
+html[data-theme=dark] body{background:#292929;color:#fff}
+html[data-theme=dark] .hero{background:#292929;border-bottom:1px solid #292929}
+html[data-theme=dark] .hero-scene{background:radial-gradient(ellipse at 77% 22%,#1849b52e,transparent 44%),radial-gradient(ellipse at 18% 78%,#1556bd1c,transparent 42%),linear-gradient(135deg,#292929,#292929 56%);}
 html[data-theme=dark] .hero::after{content:'';position:absolute;inset:60% 0 0;pointer-events:none;z-index:0;background-image:linear-gradient(#699dff09 1px,transparent 1px),linear-gradient(90deg,#699dff09 1px,transparent 1px);background-size:70px 70px;mask-image:linear-gradient(transparent,#000)}
-html[data-theme=dark] .hero h1{color:#f5f3ef;letter-spacing:-.065em}
-html[data-theme=dark] .hero-emphasis{color:#7caaff}
-html[data-theme=dark] .hero p{color:#a9b1c2}
-html[data-theme=dark] .role{background:#16315e;color:#a9caff;border:1px solid #365b93}
-html[data-theme=dark] .hero .primary{background:#f2f1ed;color:#11141a;box-shadow:0 1px 0 #fff inset}
-html[data-theme=dark] .hero .primary:hover{background:#a9caff;box-shadow:0 8px 30px #1c79ea25}
-html[data-theme=dark] .topbar{background:#171b24f2;border:1px solid #353b48;box-shadow:0 12px 44px #0004;backdrop-filter:blur(18px)}
-html[data-theme=dark] .topbar .say-hi{background:#287cf1;color:white}
-html[data-theme=dark] .avatar-key{background:#05070b;box-shadow:0 0 0 1px #404b61,0 12px 30px #0005}
-html[data-theme=dark] .avatar-key .key-face{border-color:#b3ceff;box-shadow:0 0 24px #277fff25}
-html[data-theme=dark] .about,html[data-theme=dark] .portfolio-section{background:#0c0d10;color:#f2f1ed}
-html[data-theme=dark] .about-copy{color:#b8b9c0}
-html[data-theme=dark] .skills span{background:#18243a;color:#a9caff;border:1px solid #2a4167}
-html[data-theme=dark] .index{border-color:#3b3d44}
-html[data-theme=dark] .index a{color:#aeb0bb}
-html[data-theme=dark] .index a.active{background:#e8e9ec;color:#15171c}
-html[data-theme=dark] .index a:hover:not(.active){background:#202633;color:#bad3ff}
-html[data-theme=dark] .display{color:#ededea}
-html[data-theme=dark] .logo-card{background:#efefef;color:#292929;outline:1px solid #3b3d44;outline-offset:5px}
+html[data-theme=dark] .hero h1{color:#fff;letter-spacing:-.065em}
+html[data-theme=dark] .hero-emphasis{color:#ccc}
+html[data-theme=dark] .hero p{color:#ccc}
+html[data-theme=dark] .role{background:#555;color:#ccc;border:1px solid #777}
+html[data-theme=dark] .hero .primary{background:#fff;color:#292929;box-shadow:0 1px 0 #fff inset}
+html[data-theme=dark] .hero .primary:hover{background:#ccc;box-shadow:0 8px 30px #1c79ea25}
+html[data-theme=dark] .topbar{background:#292929f2;border:1px solid #555;box-shadow:0 12px 44px #0004;backdrop-filter:blur(18px)}
+html[data-theme=dark] .topbar .say-hi{background:#777;color:white}
+html[data-theme=dark] .avatar-key{background:#292929;box-shadow:0 0 0 1px #555,0 12px 30px #0005}
+html[data-theme=dark] .avatar-key .key-face{border-color:#ccc;box-shadow:0 0 24px #277fff25}
+html[data-theme=dark] .about,html[data-theme=dark] .portfolio-section{background:#292929;color:#fff}
+html[data-theme=dark] .about-copy{color:#ccc}
+html[data-theme=dark] .skills span{background:#292929;color:#ccc;border:1px solid #555}
+html[data-theme=dark] .index{border-color:#555}
+html[data-theme=dark] .index a{color:#ccc}
+html[data-theme=dark] .index a.active{background:#fff;color:#292929}
+html[data-theme=dark] .index a:hover:not(.active){background:#292929;color:#ccc}
+html[data-theme=dark] .display{color:#fff}
+html[data-theme=dark] .logo-card{background:#fff;color:#292929;outline:1px solid #555;outline-offset:5px}
 html[data-theme=dark] .branding{background:#292929;color:white}
-html[data-theme=dark] .coming-soon{background:#121824;border-top:1px solid #29354b;border-bottom:1px solid #29354b}
-html[data-theme=dark] .coming-soon p{color:#a4adbf}
-html[data-theme=dark] .campaign-intro>p,html[data-theme=dark] .campaign-intro>div>p{color:#a3a7b0}
-html[data-theme=dark] .contact{background:#101216;border-top:1px solid #35373e;color:#f2f1ed}
-html[data-theme=dark] .contact h2{color:#f2f1ed}
-html[data-theme=dark] .contact .section-number{color:#8fb7ff}
-html[data-theme=dark] .contact-note p{color:#aeb1bb}
-html[data-theme=dark] .contact-note .email{color:#bad3ff;border-color:#4b607f}
-html[data-theme=dark] .meeting,html[data-theme=dark] .meeting-banner{background:transparent;color:#ededed;border-color:#393c45}
-html[data-theme=dark] .booking-calendar{border-color:#393c45}
-html[data-theme=dark] .host-label,html[data-theme=dark] .meeting-meta,html[data-theme=dark] .meeting-note,html[data-theme=dark] .selected-date,html[data-theme=dark] .meeting label,html[data-theme=dark] .request-summary,html[data-theme=dark] .form-help,html[data-theme=dark] .weekdays{color:#a5a9b5}
-html[data-theme=dark] .step-title>span{color:#80acfa}
-html[data-theme=dark] .calendar button,html[data-theme=dark] .time-slots button,html[data-theme=dark] .calendar-head button{background:#1b1e26;color:#dce2ed;border-color:#373d49}
-html[data-theme=dark] .calendar button:disabled{background:transparent;color:#727783}
-html[data-theme=dark] .calendar button:hover:not(:disabled),html[data-theme=dark] .time-slots button:hover{background:#2a3b57;color:#fff}
-html[data-theme=dark] .calendar button[aria-pressed=true],html[data-theme=dark] .time-slots button[aria-pressed=true]{background:#377fe9;color:#fff}
-html[data-theme=dark] .meeting input,html[data-theme=dark] .meeting select,html[data-theme=dark] .meeting textarea{background:#191c23;border-color:#373d49;color:#f0f2f6}
-html[data-theme=dark] .meeting input::placeholder,html[data-theme=dark] .meeting textarea::placeholder{color:#959ba9}
-html[data-theme=dark] .meeting input:focus,html[data-theme=dark] .meeting select:focus,html[data-theme=dark] .meeting textarea:focus{background:#202938;border-color:#83adf7}
-html[data-theme=dark] .submit{background:#e8ecf4;color:#171b24}
-html[data-theme=dark] .submit:hover{background:#a9caff}
-html[data-theme=dark] .email-options a{border-color:#65748e;color:#bad3ff}
-html[data-theme=dark] .email-options a:hover{background:#bad3ff;color:#171b24}
-html[data-theme=dark] .copy-request{color:#95bdff}
-html[data-theme=dark] .footer{background:#08090b;border-top:1px solid #303238}
-html[data-theme=dark] .footer-signature{color:#dddeda}
-html[data-theme=dark] .footer-period{color:#6da5ff}
-html[data-theme=dark] .skip{background:#f2f1ed;color:#171b24}
+html[data-theme=dark] .coming-soon{background:#292929;border-top:1px solid #555;border-bottom:1px solid #555}
+html[data-theme=dark] .coming-soon p{color:#ccc}
+html[data-theme=dark] .campaign-intro>p,html[data-theme=dark] .campaign-intro>div>p{color:#ccc}
+html[data-theme=dark] .contact{background:#292929;border-top:1px solid #555;color:#fff}
+html[data-theme=dark] .contact h2{color:#fff}
+html[data-theme=dark] .contact .section-number{color:#ccc}
+html[data-theme=dark] .contact-note p{color:#ccc}
+html[data-theme=dark] .contact-note .email{color:#ccc;border-color:#777}
+html[data-theme=dark] .meeting,html[data-theme=dark] .meeting-banner{background:transparent;color:#fff;border-color:#555}
+html[data-theme=dark] .booking-calendar{border-color:#555}
+html[data-theme=dark] .host-label,html[data-theme=dark] .meeting-meta,html[data-theme=dark] .meeting-note,html[data-theme=dark] .selected-date,html[data-theme=dark] .meeting label,html[data-theme=dark] .request-summary,html[data-theme=dark] .form-help,html[data-theme=dark] .weekdays{color:#ccc}
+html[data-theme=dark] .step-title>span{color:#ccc}
+html[data-theme=dark] .calendar button,html[data-theme=dark] .time-slots button,html[data-theme=dark] .calendar-head button{background:#292929;color:#fff;border-color:#555}
+html[data-theme=dark] .calendar button:disabled{background:transparent;color:#777}
+html[data-theme=dark] .calendar button:hover:not(:disabled),html[data-theme=dark] .time-slots button:hover{background:#555;color:#fff}
+html[data-theme=dark] .calendar button[aria-pressed=true],html[data-theme=dark] .time-slots button[aria-pressed=true]{background:#777;color:#fff}
+html[data-theme=dark] .meeting input,html[data-theme=dark] .meeting select,html[data-theme=dark] .meeting textarea{background:#292929;border-color:#555;color:#fff}
+html[data-theme=dark] .meeting input::placeholder,html[data-theme=dark] .meeting textarea::placeholder{color:#ccc}
+html[data-theme=dark] .meeting input:focus,html[data-theme=dark] .meeting select:focus,html[data-theme=dark] .meeting textarea:focus{background:#292929;border-color:#ccc}
+html[data-theme=dark] .submit{background:#fff;color:#292929}
+html[data-theme=dark] .submit:hover{background:#ccc}
+html[data-theme=dark] .email-options a{border-color:#777;color:#ccc}
+html[data-theme=dark] .email-options a:hover{background:#ccc;color:#292929}
+html[data-theme=dark] .copy-request{color:#ccc}
+html[data-theme=dark] .footer{background:#292929;border-top:1px solid #555}
+html[data-theme=dark] .footer-signature{color:#fff}
+html[data-theme=dark] .footer-period{color:#ccc}
+html[data-theme=dark] .skip{background:#fff;color:#292929}
 
-/* Violet/cyan night palette, with the original device artwork preserved. */
-html[data-theme=dark]{--blue:#9978ff;--paper:#101019;--ink:#f5f2ff}
-html[data-theme=dark] .hero{background:#101019}
-html[data-theme=dark] .hero-scene{background-image:url('assets/hero-devices.webp'),radial-gradient(ellipse at 12% 55%,#7452ca55,transparent 50%),radial-gradient(ellipse at 90% 30%,#168b9a40,transparent 45%),linear-gradient(145deg,#181328,#0c1420);background-size:cover;background-position:center}
-html[data-theme=dark] .hero::after{inset:0;background:radial-gradient(ellipse at 50% 100%,#8a5fff18,transparent 60%);mask-image:none}
-html[data-theme=dark] .hero-emphasis{color:#b5a0ff;background:linear-gradient(100deg,#c8b6ff 12%,#a99bff 50%,#7ce6e4 95%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-html[data-theme=dark] .hero h1{color:#f6f3ff;text-shadow:0 2px 25px #0b0b2020}
-html[data-theme=dark] .hero p{color:#c5bed6}
-html[data-theme=dark] .role{background:#282039;color:#d6c6ff;border-color:#6d568b}
-html[data-theme=dark] .hero .primary{background:#d2c2ff;color:#211833;box-shadow:0 6px 35px #9b75ff25}
-html[data-theme=dark] .hero .primary:hover{background:#b9f5f0;box-shadow:0 8px 40px #74dbcf30}
-html[data-theme=dark] .topbar{background:linear-gradient(120deg,#262131ed,#151922f2);border-color:#6b5c804d}
-html[data-theme=dark] .topbar .say-hi{background:#ab8af4;color:#191026}
-html[data-theme=dark] .avatar-key .key-face{border-color:#d0bcff;box-shadow:0 0 30px #ac7bff40}
-html[data-theme=dark] .skills span{background:#252035;color:#d2befa;border-color:#4c3f67}
-html[data-theme=dark] .about,html[data-theme=dark] .portfolio-section{background:#101019}
-html[data-theme=dark] .coming-soon{background:#181523;border-color:#393047}
-html[data-theme=dark] .contact{background:#14131d}
-html[data-theme=dark] .contact .section-number,html[data-theme=dark] .contact-note .email,html[data-theme=dark] .copy-request,html[data-theme=dark] .step-title>span{color:#c5b0ff}
-html[data-theme=dark] .calendar button[aria-pressed=true],html[data-theme=dark] .time-slots button[aria-pressed=true]{background:#b59af5;color:#20162e}
-html[data-theme=dark] .submit{background:#d2c2ff;color:#211833}
-html[data-theme=dark] .submit:hover{background:#b9f5f0}
-html[data-theme=dark] .footer{background:#0d0c14}
-html[data-theme=dark] .footer-period{color:#b99af6}
 ::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
 ::view-transition-new(root){z-index:1}
 html.theme-fallback body{animation:theme-fade .55s ease-out}
 @keyframes theme-fade{from{opacity:.35}to{opacity:1}}
 @media(prefers-reduced-motion:reduce){html.theme-fallback body{animation:none}}
-@media(max-width:700px){html[data-theme=dark] .hero-scene{background-size:100% auto,cover,cover,cover;background-position:center bottom,center,center,center;background-repeat:no-repeat}}
 
+/* Both themes share the PDF artwork's cover sizing and centered placement. */
+html[data-theme=dark]{--blue:#1c79ea;--paper:#292929;--ink:#fff}
+html[data-theme=dark] .hero{background:#292929}
+html[data-theme=dark] .hero-scene{background:url('assets/hero-devices.webp') center / cover no-repeat}
+html[data-theme=dark] .hero::after{display:none}
+html[data-theme=dark] .hero h1{color:#fff;letter-spacing:-.07em;text-shadow:none}
+html[data-theme=dark] .hero-emphasis{color:inherit;background:none;-webkit-text-fill-color:currentColor}
+html[data-theme=dark] .hero p{color:#ccc}
+html[data-theme=dark] .role{background:#1c79ea;color:white;border:0}
+html[data-theme=dark] .hero .primary,html[data-theme=dark] .submit{background:#fff;color:#292929;box-shadow:none}
+html[data-theme=dark] .hero .primary:hover,html[data-theme=dark] .submit:hover{background:#ccc;box-shadow:none}
+html[data-theme=dark] .topbar{background:linear-gradient(#535353,#292929);border:0;box-shadow:none}
+html[data-theme=dark] .topbar .say-hi{background:linear-gradient(#2285f6,#0866d7);color:#fff}
+html[data-theme=dark] .avatar-key{background:#292929;box-shadow:none}
+html[data-theme=dark] .avatar-key .key-face{border-color:#fff;box-shadow:none}
+html[data-theme=dark] .skills span{background:#555;color:#fff;border-color:#777}
+html[data-theme=dark] .calendar button[aria-pressed=true],html[data-theme=dark] .time-slots button[aria-pressed=true]{background:#1c79ea;color:white}
+html[data-theme=dark] .footer-period{color:#1c79ea}
