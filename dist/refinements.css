@@ -366,6 +366,9 @@ html[data-theme=dark] .avatar-key{box-shadow:0 0 0 1px #656565}
 
 /* Phone layout follows the content flow rather than desktop offsets. */
 @media(max-width:700px){
+ .hero{overflow:visible}
+ .hero-scene{z-index:1;overflow:visible}
+ .hero-scene::before{z-index:0}
  .hero-mobile-laptop{display:block;position:absolute;z-index:1;pointer-events:none;width:auto;height:auto;max-width:none}
  .hero-mobile-laptop-left{left:-4vw;bottom:0;width:48vw}
  .hero-mobile-laptop-right{right:-4vw;bottom:-1vw;width:50vw}
