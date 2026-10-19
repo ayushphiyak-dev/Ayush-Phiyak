@@ -70,12 +70,34 @@ function applyTheme(theme){
  fidget.setAttribute('aria-pressed',String(dark));
  fidget.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');
  fidget.title=dark?'Switch to light mode':'Switch to dark mode';
- document.querySelector('meta[name="theme-color"]').content=dark?'#141619':'#1d7af1';
+ document.querySelector('meta[name="theme-color"]').content=dark?'#101019':'#1d7af1';
  try{localStorage.setItem('portfolio-theme',theme)}catch{}
 }
 applyTheme(document.documentElement.dataset.theme||'light');
+let themeTransitionRunning=false;
+async function switchTheme(){
+ if(themeTransitionRunning)return;
+ const theme=document.documentElement.dataset.theme==='dark'?'light':'dark';
+ if(reducedMotion.matches){applyTheme(theme);return}
+ if(!document.startViewTransition){
+  document.documentElement.classList.remove('theme-fallback');
+  void document.documentElement.offsetWidth;
+  applyTheme(theme);document.documentElement.classList.add('theme-fallback');
+  return;
+ }
+ themeTransitionRunning=true;
+ const bounds=fidget.getBoundingClientRect(),x=bounds.left+bounds.width/2,y=bounds.top+bounds.height/2;
+ const radius=Math.hypot(Math.max(x,innerWidth-x),Math.max(y,innerHeight-y));
+ const transition=document.startViewTransition(()=>applyTheme(theme));
+ try{
+  await transition.ready;
+  await document.documentElement.animate({clipPath:[`circle(0px at ${x}px ${y}px)`,`circle(${radius}px at ${x}px ${y}px)`]},
+   {duration:850,easing:'cubic-bezier(.22,.65,.2,1)',pseudoElement:'::view-transition-new(root)'}).finished;
+ }catch{ /* A skipped browser transition still applies the selected theme. */ }
+ finally{await transition.finished.catch(()=>{});themeTransitionRunning=false}
+}
 fidget.addEventListener('click',()=>{
- applyTheme(document.documentElement.dataset.theme==='dark'?'light':'dark');
+ switchTheme();
  fidgetClicks++;
  const face=fidget.querySelector('.key-face'),avatar=fidget.querySelector('img');
  face.getAnimations().forEach(animation=>animation.cancel());
@@ -97,4 +119,3 @@ form.addEventListener('input',()=>{document.querySelector('#email-options').hidd
 
 function invalidatePreparedRequest(){document.querySelector('#email-options').hidden=true;document.querySelector('#copy-request').hidden=true;}
 form.addEventListener('change',invalidatePreparedRequest);document.querySelector('#calendar').addEventListener('click',invalidatePreparedRequest);slots.addEventListener('click',invalidatePreparedRequest);
-
