@@ -64,6 +64,7 @@ document.querySelector('#copy-request').addEventListener('click',async()=>{try{a
 // Tactile, keyboard-accessible fidget key. No sound or external side effects.
 const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
 const fidget=document.querySelector('#fidget');let fidgetClicks=0;
+for(const eventName of ['selectstart','dragstart']){fidget.addEventListener(eventName,event=>event.preventDefault())}
 function applyTheme(theme){
  document.documentElement.dataset.theme=theme;
  const dark=theme==='dark';
@@ -99,7 +100,7 @@ async function switchTheme(){
 fidget.addEventListener('click',()=>{
  switchTheme();
  fidgetClicks++;
- const face=fidget.querySelector('.key-face'),avatar=fidget.querySelector('img');
+ const face=fidget.querySelector('.key-face');
  face.getAnimations().forEach(animation=>animation.cancel());
  face.animate(reducedMotion.matches?[{background:'#80b9ff'},{background:'#1c79ea'}]:[{transform:'translateY(9px) scale(.94)'},{transform:'translateY(-3px)',offset:.42},{transform:'translateY(1px)',offset:.7},{transform:'translateY(0)'}],{duration:reducedMotion.matches?120:560,easing:'cubic-bezier(.2,.7,.2,1)'});
  if(reducedMotion.matches)return;
