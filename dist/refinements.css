@@ -220,3 +220,22 @@ html[data-theme=dark] .avatar-key .key-face{border-color:#fff;box-shadow:none}
 html[data-theme=dark] .skills span{background:#555;color:#fff;border-color:#777}
 html[data-theme=dark] .calendar button[aria-pressed=true],html[data-theme=dark] .time-slots button[aria-pressed=true]{background:#1c79ea;color:white}
 html[data-theme=dark] .footer-period{color:#1c79ea}
+
+/* Preserve component silhouettes and artwork surfaces in the night theme. */
+html[data-theme=dark] .logo-card{background:#efefef;color:#292929;outline:none}
+html[data-theme=dark] .logo-card .country{color:#6e6e6e}
+html[data-theme=dark] .logo-card img{mix-blend-mode:normal}
+html[data-theme=dark] .about .portrait{outline:1px solid #aaa;outline-offset:2px}
+html[data-theme=dark] .avatar-key{background:#292929;box-shadow:0 0 0 1px #ccc,0 3px 0 #777}
+html[data-theme=dark] .topbar{box-shadow:inset 0 0 0 1px #777,0 3px 0 #202020}
+html[data-theme=dark] .calendar button:not(:disabled),html[data-theme=dark] .time-slots button,html[data-theme=dark] .calendar-head button{background:#555;color:#fff;border-color:#aaa}
+html[data-theme=dark] .calendar button[aria-pressed=true],html[data-theme=dark] .time-slots button[aria-pressed=true]{background:#0966da;color:#fff;box-shadow:inset 0 0 0 2px #fff}
+html[data-theme=dark] .calendar button:hover:not(:disabled),html[data-theme=dark] .time-slots button:hover{background:#6e6e6e}
+html[data-theme=dark] .calendar button[aria-pressed=true]:hover,html[data-theme=dark] .time-slots button[aria-pressed=true]:hover{background:#0966da}
+html[data-theme=dark] .meeting input,html[data-theme=dark] .meeting select,html[data-theme=dark] .meeting textarea{border-color:#aaa}
+html[data-theme=dark] .index small{color:#ccc}
+html[data-theme=dark] .index a.active small{color:#555}
+html[data-theme=dark] .index a:hover:not(.active){background:#555;color:#fff}
+html[data-theme=dark] :is(a,button,input,select,textarea):focus-visible{outline-color:#fff}
+html[data-theme=dark] .logo-card :focus-visible{outline-color:#292929}
+
