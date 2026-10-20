@@ -509,4 +509,17 @@ html[data-theme=dark] .hero-click{color:#fff}
 }
 
 
-
+/* The hint stays beside its key at intermediate desktop-mode widths. */
+@media(min-width:701px) and (max-width:1100px){
+ .theme-hint{position:absolute;left:calc(100% + 8px);right:auto;top:60%;width:132px;height:132px;transform:none;font:italic 16px/1.2 Arial,sans-serif;letter-spacing:-.03em}
+ .theme-hint svg{position:absolute;left:0;top:0;width:44px;height:105px;margin:0;transform:none}
+ .theme-hint>span{position:absolute;left:-36px;top:109px;width:150px;margin:0;text-align:center}
+ .hero p{margin-top:145px}
+}
+@media(max-width:700px){
+ .theme-hint{left:calc(100% + 1.5vw);right:auto;top:75%;width:25vw;height:19vw;transform:none;font-size:3.5vw}
+ .theme-hint svg{left:0;top:0;width:6.6vw;height:14vw;margin:0;transform:none}
+ .theme-hint>span{left:-7vw;top:14.3vw;width:28vw;text-align:center}
+ .hero-content{padding-top:max(112px,29.2vw)}
+ .hero h1,html[data-theme=dark] .hero h1{padding-bottom:30vw}
+}
