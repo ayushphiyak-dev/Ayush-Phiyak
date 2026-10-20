@@ -1,6 +1,12 @@
 .ux-case{--ux-bg:#fff;--ux-soft:#efefef;--ux-card:#fff;--ux-ink:#292929;--ux-line:#d4d4d4;--ux-accent:#ff2638;background:var(--ux-bg);color:var(--ux-ink)}
 html[data-theme=dark] .ux-case{--ux-bg:#292929;--ux-soft:#333;--ux-card:#3b3b3b;--ux-ink:#f5f5f5;--ux-line:#626262;--ux-accent:#ff6370}
 .ux-case *{box-sizing:border-box;min-width:0}
+.ux-person img[src$="ux-priya.webp"]{clip-path:ellipse(49% 42.9% at 50.8% 51.7%)}
+.ux-person{height:100%}
+.ux-person img[src$="ux-jordan.webp"]{clip-path:circle(49.8% at 50% 50%)}
+.ux-static-showcase>.ux-grid>img{display:block;width:100%;height:auto;object-fit:contain;align-self:start}
+.ux-about-project .ux-card{background:transparent!important}
+.ux-about-project .ux-card .ux-card-label{display:block;font-size:13px;color:var(--ux-accent);margin-bottom:16px}
 .ux-case [hidden]{display:none!important}.ux-person h5{font-size:15px;text-transform:uppercase;margin:20px 0 8px}
 .ux-quote h4{font-size:15px;color:var(--ux-accent);margin:0 0 20px}.ux-quote hr{border:0;border-top:1px solid var(--ux-line);margin:20px 0}
 .ux-case ul{padding-left:18px;margin:14px 0;font-size:14px;line-height:1.55;text-transform:uppercase}.ux-case li{margin:4px 0}
@@ -39,3 +45,45 @@ html[data-theme=dark] .ux-case{--ux-bg:#292929;--ux-soft:#333;--ux-card:#3b3b3b;
 @media(max-width:1100px){.ux-grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}.ux-grid-5{grid-template-columns:repeat(3,minmax(0,1fr))}.ux-heading h3{font-size:clamp(40px,5.9vw,66px)}.ux-person,.ux-person:last-child{grid-template-columns:1fr}.ux-person img{max-width:160px}.ux-person:last-child img{order:0}.ux-cover{padding:6%;border-radius:30px}.ux-cover h3{font-size:7vw}.ux-heading>p{font-size:14px}}
 @media(max-width:700px){.ux-block{padding:40px 6%}.ux-cover{grid-template-columns:1fr;padding:32px 6%;border-radius:24px}.ux-cover h3{font-size:clamp(38px,10.5vw,72px);letter-spacing:-.06em}.ux-cover p{font-size:18px;line-height:1.4}.ux-cover small{font-size:11px;margin-top:24px}.ux-shield{width:65%;max-width:300px;margin:auto}.ux-tags span{font-size:11px;padding:6px 10px}.ux-heading{grid-template-columns:1fr;gap:24px;margin-bottom:30px}.ux-heading h3{font-size:clamp(38px,10vw,64px);line-height:1.02}.ux-kicker{font-size:16px;margin-bottom:20px}.ux-heading>p{font-size:14px;line-height:1.6}.ux-grid-2,.ux-grid-3,.ux-grid-4,.ux-grid-5{grid-template-columns:1fr}.ux-card{padding:22px}.ux-card p{font-size:14px}.ux-card h4{font-size:24px;margin:14px 0 24px}.ux-person,.ux-person:last-child{grid-template-columns:1fr}.ux-person img{max-width:145px;margin:0 auto}.ux-person p{line-height:1.65}.ux-person+.ux-person{margin-top:20px}.ux-about-project>.ux-grid{width:100%;grid-template-columns:1fr 1fr}.ux-subheading{display:block}.ux-subheading p{margin-top:14px}.ux-subtitle,.ux-subheading h4{font-size:24px;line-height:1.2}.ux-endnotes{flex-direction:column;font-size:11px}.ux-credit{margin:30px 0 50px}.ux-conflict{flex-wrap:wrap}.ux-demo-head{flex-wrap:wrap}.ux-title .display{font-size:25vw}.ux-title .section-index{margin-bottom:0}#logofolio .logo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#logofolio .logo-card{min-height:230px;height:auto}#logofolio .logo-card img{height:auto;max-height:none}#logofolio .logo-card p{overflow-wrap:break-word}}
 @media(max-width:360px){#logofolio .logo-grid{grid-template-columns:1fr}}
+
+/* Phone composition: compact reading rhythm, paired short cards, full artwork. */
+@media(max-width:700px){
+ .ux-block{padding:30px 5%}
+ .ux-heading{gap:16px;margin-bottom:22px}
+ .ux-heading h3{font-size:clamp(30px,8vw,44px);line-height:1.05}
+ .ux-kicker{font-size:12px;line-height:1.4;margin-bottom:12px;letter-spacing:-.02em}
+ .ux-heading>p{font-size:13px;line-height:1.6}
+ .ux-cover{padding:26px 5%;gap:16px;border-radius:18px}
+ .ux-cover h3{font-size:clamp(34px,9vw,52px);margin:24px 0}
+ .ux-cover p{font-size:15px;line-height:1.5}
+ .ux-cover small{font-size:10px;margin-top:20px}
+ .ux-shield{width:42%;max-width:180px}
+ .ux-grid{gap:12px;margin-top:18px}
+ .ux-grid-4,.ux-grid-5{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .ux-card,.ux-grid-5 .ux-card{padding:14px;border-radius:12px}
+ .ux-card h4,.ux-grid-5 h4{font-size:17px;line-height:1.2;margin:12px 0 16px;letter-spacing:-.025em}
+ .ux-card p,.ux-person p,.ux-case ul{font-size:13px;line-height:1.55}
+ .ux-card .ux-card-label{font-size:10px;line-height:1.4}
+ .ux-grid-5>.ux-card:last-child{grid-column:1/-1}
+ .ux-quote{border:0;border-top:1px solid var(--ux-line);border-radius:0;background:transparent;padding:18px 0}
+ .ux-quote h4{font-size:14px;margin:0 0 12px}
+ .ux-quote hr{margin:12px 0}
+ .ux-person,.ux-person:last-child{display:block;height:auto}
+ .ux-person img,.ux-person:last-child img{float:right;width:84px;max-width:26%;height:auto;margin:0 0 12px 14px}
+ .ux-person::after{content:'';display:block;clear:both}
+ .ux-person h4{font-size:22px;margin-bottom:8px}
+ .ux-person h5{font-size:13px;margin:16px 0 8px}
+ .ux-person+.ux-person{margin-top:8px;padding-top:24px;border-top:1px solid var(--ux-line)}
+ .ux-subtitle,.ux-subheading h4{font-size:20px;margin:26px 0 18px}
+ .ux-about-project .ux-card{padding:14px 0}
+ .ux-about-project .ux-card .ux-card-label{font-size:11px;margin-bottom:10px}
+ .ux-credit{margin:24px 0 32px;padding:12px 24px}
+ .ux-endnotes{gap:14px}
+ #logofolio .logo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ #logofolio .logo-card{min-height:190px;padding:12px 10px}
+ #logofolio .logo-card p{font-size:11px}
+}
+@media(min-width:380px) and (max-width:700px){
+ .ux-grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .ux-grid-3>.ux-card:last-child:nth-child(odd){grid-column:1/-1}
+}
