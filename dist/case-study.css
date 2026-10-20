@@ -87,3 +87,32 @@ html[data-theme=dark] .ux-case{--ux-bg:#292929;--ux-soft:#333;--ux-card:#3b3b3b;
  .ux-grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}
  .ux-grid-3>.ux-card:last-child:nth-child(odd){grid-column:1/-1}
 }
+
+/* UX/UI phone layout: keep the roomy reading rhythm while preserving the original page composition. */
+@media(max-width:700px){
+ .ux-block{padding:46px 7%}
+ .ux-heading{gap:28px;margin-bottom:34px}
+ .ux-kicker{font-size:14px;line-height:1.45;margin-bottom:16px}
+ .ux-heading h3{font-size:clamp(36px,10vw,56px);line-height:1.02}
+ .ux-heading>p{font-size:15px;line-height:1.7}
+ .ux-grid{gap:18px;margin-top:24px}
+ .ux-grid-2,.ux-grid-3,.ux-grid-4,.ux-grid-5{grid-template-columns:1fr}
+ .ux-grid-5>.ux-card:last-child{grid-column:auto}
+ .ux-card,.ux-grid-5 .ux-card{padding:22px;border-radius:16px}
+ .ux-card h4,.ux-grid-5 h4{font-size:21px;line-height:1.22;margin:14px 0 20px}
+ .ux-card p,.ux-person p,.ux-case ul{font-size:14px;line-height:1.65}
+ .ux-card .ux-card-label{font-size:11px;line-height:1.45}
+ .ux-quote{padding:22px 0}
+ .ux-quote h4{font-size:16px;margin-bottom:14px}
+ .ux-quote hr{margin:14px 0}
+ .ux-person img,.ux-person:last-child img{width:106px;max-width:30%;margin:0 0 16px 18px}
+ .ux-person h4{font-size:25px;margin-bottom:10px}
+ .ux-person h5{font-size:14px;margin:20px 0 10px}
+ .ux-person+.ux-person{margin-top:28px;padding-top:30px}
+ .ux-about-project>.ux-grid{width:100%;grid-template-columns:1fr}
+ .ux-about-project .ux-card{padding:18px 0}
+ .ux-about-project .ux-card .ux-card-label{font-size:12px;margin-bottom:12px}
+ .ux-subtitle,.ux-subheading h4{font-size:22px;margin:32px 0 20px}
+ .ux-subheading p{font-size:13px;line-height:1.6}
+}
+
