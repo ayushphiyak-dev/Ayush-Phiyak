@@ -111,8 +111,9 @@ html[data-theme=dark] .ux-shield img+img{opacity:.14}
  .ux-quote{padding:22px 0}
  .ux-quote h4{font-size:16px;margin-bottom:14px}
  .ux-quote hr{margin:14px 0}
- .ux-person img,.ux-person:last-child img{width:100%;max-width:none;margin:0}
+ .ux-person img,.ux-person:last-child img{width:106px;max-width:30%;margin:0 0 16px 18px}
  .ux-person .ux-portrait-ring{float:right;width:106px;max-width:30%;margin:0 0 16px 18px}
+ .ux-person .ux-portrait-ring img{float:none;width:100%;max-width:none;margin:0}
  .ux-person h4{font-size:25px;margin-bottom:10px}
  .ux-person h5{font-size:14px;margin:20px 0 10px}
  .ux-person+.ux-person{margin-top:28px;padding-top:30px}
