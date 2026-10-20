@@ -1,0 +1,21 @@
+.topbar{overflow:visible}
+.work-menu{position:relative}
+.work-menu summary{cursor:pointer;list-style:none;white-space:nowrap}
+.work-menu summary::-webkit-details-marker{display:none}
+.topbar nav{align-items:center}
+.work-menu summary{font-size:16px;letter-spacing:-.035em;display:flex;align-items:center;min-height:40px}
+@media(min-width:1101px){.work-menu summary{font-size:1.1971vw}}
+@media(max-width:700px){.work-menu summary{font-size:12px}}
+@media(max-width:380px){.work-menu summary{font-size:11px}}
+.work-menu summary::after{content:'⌄';margin-left:5px;font-size:.75em}
+.work-menu[open] summary{color:#80baff}
+.topbar .work-options{position:absolute;top:calc(100% + 22px);right:-12px;width:240px;max-width:calc(100vw - 32px);display:flex;flex-direction:column;align-items:stretch;gap:2px;padding:10px;background:#292929;color:#fff;border:1px solid #666;border-radius:14px;box-shadow:0 12px 35px #0003;z-index:100}
+.topbar .work-options a,.work-theme{display:block;padding:12px;text-align:left;color:#fff;font:inherit;font-size:15px;text-decoration:none;background:transparent;border:0;border-radius:7px;cursor:pointer}
+.topbar .work-options a:hover,.work-theme:hover{background:#444}
+.work-theme{border-top:1px solid #666;border-radius:0;margin-top:4px}
+.work-menu :focus-visible{outline:2px solid #80baff;outline-offset:3px}
+.work-page main{padding-top:115px}
+.work-page .portfolio-section{scroll-margin-top:120px}
+.work-page .work-return{display:block;width:max-content;margin:36px auto 70px;color:inherit;font-size:18px}
+.work-page .topbar{position:fixed;top:24px}
+@media(max-width:700px){.work-page main{padding-top:90px}.work-page .topbar{top:14px}.topbar .work-options{right:-70px;top:calc(100% + 20px)}}
