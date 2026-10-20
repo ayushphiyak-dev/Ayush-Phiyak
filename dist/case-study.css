@@ -2,6 +2,8 @@
 html[data-theme=dark] .ux-case{--ux-bg:#292929;--ux-soft:#333;--ux-card:#3b3b3b;--ux-ink:#f5f5f5;--ux-line:#626262;--ux-accent:#ff6370}
 .ux-case *{box-sizing:border-box;min-width:0}
 .ux-person img[src$="ux-priya.webp"]{clip-path:ellipse(49% 42.9% at 50.8% 51.7%)}
+.ux-portrait-ring{position:relative;display:block;width:100%;line-height:0}
+.ux-portrait-ring::after{content:"";position:absolute;inset:7.1% 1%;border:1px solid #d9d9d9;border-radius:50%;pointer-events:none}
 .ux-person{height:100%}
 .ux-person img[src$="ux-jordan.webp"]{clip-path:circle(49.8% at 50% 50%)}
 .ux-static-showcase>.ux-grid>img{display:block;width:100%;height:auto;object-fit:contain;align-self:start}
@@ -17,7 +19,11 @@ html[data-theme=dark] .ux-case{--ux-bg:#292929;--ux-soft:#333;--ux-card:#3b3b3b;
 .ux-cover em{color:#ff2638;font-style:normal}.ux-cover p{font-size:clamp(17px,2vw,28px);line-height:1.15;color:#ccc;letter-spacing:-.04em;max-width:680px}
 .ux-cover small{display:block;margin-top:48px;font-size:14px;letter-spacing:-.02em}
 .ux-tags,.ux-legend{display:flex;flex-wrap:wrap;gap:8px}.ux-tags span,.ux-legend span{border-radius:30px;background:#ccc;color:#292929;padding:8px 18px;font-size:14px;line-height:1.2;letter-spacing:-.035em}
-.ux-shield img{width:100%;height:auto;object-fit:contain}.ux-shield img+img{width:85%;margin:10px auto 0}
+.ux-shield{position:relative;display:grid;justify-items:center;align-items:start}
+.ux-shield img{width:100%;height:auto;object-fit:contain}.ux-shield img:first-child{position:relative;z-index:1;animation:ux-shield-float 6s ease-in-out infinite}.ux-shield img+img{width:85%;margin:-4% auto 0;opacity:.24;filter:blur(2px) grayscale(1);transform:scale(.9);z-index:0}
+html[data-theme=dark] .ux-shield img+img{opacity:.14}
+@keyframes ux-shield-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@media(prefers-reduced-motion:reduce){.ux-shield img:first-child{animation:none}}
 .ux-block{padding:clamp(40px,6vw,84px) 7.5%;background:var(--ux-bg);color:var(--ux-ink)}
 .ux-muted{background:var(--ux-soft)}
 .ux-heading{display:grid;grid-template-columns:1fr 1fr;gap:5%;align-items:start;margin-bottom:44px}
@@ -105,7 +111,8 @@ html[data-theme=dark] .ux-case{--ux-bg:#292929;--ux-soft:#333;--ux-card:#3b3b3b;
  .ux-quote{padding:22px 0}
  .ux-quote h4{font-size:16px;margin-bottom:14px}
  .ux-quote hr{margin:14px 0}
- .ux-person img,.ux-person:last-child img{width:106px;max-width:30%;margin:0 0 16px 18px}
+ .ux-person img,.ux-person:last-child img{width:100%;max-width:none;margin:0}
+ .ux-person .ux-portrait-ring{float:right;width:106px;max-width:30%;margin:0 0 16px 18px}
  .ux-person h4{font-size:25px;margin-bottom:10px}
  .ux-person h5{font-size:14px;margin:20px 0 10px}
  .ux-person+.ux-person{margin-top:28px;padding-top:30px}
