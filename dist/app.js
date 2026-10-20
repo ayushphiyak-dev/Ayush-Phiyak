@@ -3,8 +3,8 @@ const sections=[['about','About me'],['logofolio','Logofolio'],['branding','Bran
 document.querySelectorAll('.index').forEach(nav=>{nav.innerHTML=sections.map(([id,title],i)=>`<a href="#${id}" ${id===nav.dataset.active?'class="active" aria-current="location"':''}><span>${title}</span><span>0${i+1}</span></a>`).join('')});
 const logos=[
  [{id:'adamacaw',name:'ADAMACAW',category:'Hospitality & travel',country:'Costa Rica',tall:true},{id:'velora',name:'VELORA',category:'Luxury jewellery',country:'Italy'}],
- [{id:'remis',name:'Remis',category:'Finance',country:'Argentina'},{id:'ember',name:'EMBER & BEAN',category:'Café & Bakehouse',country:'Australia',tall:true}],
- [{id:'cipherfort',name:'CIPHERFORT',category:'Technology / cybersecurity',country:'Estonia',tall:true},{id:'klay',name:'KLAY',category:'Kid daycare',country:'India'}]
+ [{id:'access',name:'Access Control',category:'Enterprise SaaS / Cybersecurity',country:'United States'},{id:'ember',name:'EMBER & BEAN',category:'Café & Bakehouse',country:'Australia',tall:true}],
+ [{id:'cipherfort',name:'CIPHERFORT',category:'Technology',country:'Estonia',tall:true},{id:'klay',name:'KLAY',category:'Kid daycare',country:'India'}]
 ];
 function artwork(src,alt,classes=''){return `<button type="button" class="art-button ${classes}" data-art="${src}" data-caption="${alt}" aria-label="Enlarge ${alt}"><img loading="lazy" width="${imageSizes[src][0]}" height="${imageSizes[src][1]}" src="${src}" alt="${alt}"></button>`}
 document.querySelector('#logo-grid').innerHTML=logos.map(col=>`<div class="logo-column">${col.map(logo=>`<article class="logo-card ${logo.tall?'tall':''}"><p>${logo.category}</p><div class="logo-art"><img loading="lazy" src="assets/logo-${logo.id}.webp" alt="${logo.name} logo"></div><p class="country">${logo.country}</p></article>`).join('')}</div>`).join('');
