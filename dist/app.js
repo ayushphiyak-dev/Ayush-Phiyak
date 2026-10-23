@@ -43,19 +43,26 @@ function playKeyClick(){
   if(!AudioContextClass)return;
   const context=new AudioContextClass();
   const start=context.currentTime;
-  const master=context.createGain();
-  master.gain.setValueAtTime(.0001,start);
-  master.gain.exponentialRampToValueAtTime(.055,start+.003);
-  master.gain.exponentialRampToValueAtTime(.0001,start+.055);
-  master.connect(context.destination);
-  const tone=context.createOscillator();
-  tone.type='triangle';
-  tone.frequency.setValueAtTime(1450,start);
-  tone.frequency.exponentialRampToValueAtTime(520,start+.045);
-  tone.connect(master);
-  tone.start(start);
-  tone.stop(start+.06);
-  tone.addEventListener('ended',()=>context.close(),{once:true});
+  const noise=context.createBuffer(1,Math.ceil(context.sampleRate*.06),context.sampleRate);
+  const samples=noise.getChannelData(0);
+  for(let i=0;i<samples.length;i++)samples[i]=Math.random()*2-1;
+  const tick=(at,{duration,cutoff,gain})=>{
+   const source=context.createBufferSource();source.buffer=noise;
+   const filter=context.createBiquadFilter();filter.type='highpass';filter.frequency.value=cutoff;filter.Q.value=.7;
+   const envelope=context.createGain();envelope.gain.setValueAtTime(.0001,at);envelope.gain.exponentialRampToValueAtTime(gain,at+.0015);envelope.gain.exponentialRampToValueAtTime(.0001,at+duration);
+   source.connect(filter).connect(envelope).connect(context.destination);source.start(at);source.stop(at+duration);
+  };
+  const thock=(at,{duration,from,to,gain})=>{
+   const tone=context.createOscillator(),envelope=context.createGain();tone.type='triangle';tone.frequency.setValueAtTime(from,at);tone.frequency.exponentialRampToValueAtTime(to,at+duration);
+   envelope.gain.setValueAtTime(.0001,at);envelope.gain.exponentialRampToValueAtTime(gain,at+.002);envelope.gain.exponentialRampToValueAtTime(.0001,at+duration);
+   tone.connect(envelope).connect(context.destination);tone.start(at);tone.stop(at+duration);
+  };
+  // A crisp switch contact and a short, lower case resonance on the press.
+  tick(start,{duration:.012,cutoff:1500,gain:.2});
+  thock(start,{duration:.045,from:210,to:85,gain:.17});
+  tick(start+.28,{duration:.009,cutoff:2100,gain:.12});
+  thock(start+.28,{duration:.032,from:280,to:130,gain:.085});
+  window.setTimeout(()=>context.close().catch(()=>{}),450);
  }catch{/* Sound is a small enhancement; the theme switch always works. */}
 }
 for(const eventName of ['selectstart','dragstart']){fidget.addEventListener(eventName,event=>event.preventDefault())}
