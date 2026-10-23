@@ -34,9 +34,30 @@ form.addEventListener('submit',event=>{event.preventDefault();if(!selectedDate){
  document.querySelector('#copy-request').hidden=false});
 document.querySelector('#copy-request').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(requestText);status.textContent='Request details copied. Email them to ayushphiyakwork@gmail.com.'}catch{status.textContent='Clipboard access is unavailable. Please use the email button or contact Ayush directly.'}});
 
-// Tactile, keyboard-accessible fidget key. No sound or external side effects.
+// Tactile, keyboard-accessible theme key with a small, locally generated click.
 const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
 const fidget=document.querySelector('#fidget');
+function playKeyClick(){
+ try{
+  const AudioContextClass=window.AudioContext||window.webkitAudioContext;
+  if(!AudioContextClass)return;
+  const context=new AudioContextClass();
+  const start=context.currentTime;
+  const master=context.createGain();
+  master.gain.setValueAtTime(.0001,start);
+  master.gain.exponentialRampToValueAtTime(.055,start+.003);
+  master.gain.exponentialRampToValueAtTime(.0001,start+.055);
+  master.connect(context.destination);
+  const tone=context.createOscillator();
+  tone.type='triangle';
+  tone.frequency.setValueAtTime(1450,start);
+  tone.frequency.exponentialRampToValueAtTime(520,start+.045);
+  tone.connect(master);
+  tone.start(start);
+  tone.stop(start+.06);
+  tone.addEventListener('ended',()=>context.close(),{once:true});
+ }catch{/* Sound is a small enhancement; the theme switch always works. */}
+}
 for(const eventName of ['selectstart','dragstart']){fidget.addEventListener(eventName,event=>event.preventDefault())}
 function applyTheme(theme){
  document.documentElement.dataset.theme=theme;
@@ -73,6 +94,7 @@ async function switchTheme(){
 }
 let keyActivation=0;
 fidget.addEventListener('click',async()=>{
+ playKeyClick();
  const activation=++keyActivation;
  const assembly=fidget.querySelector('.key-assembly');
  assembly.getAnimations().forEach(animation=>animation.cancel());
