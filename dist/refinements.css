@@ -523,3 +523,48 @@ html[data-theme=dark] .hero-click{color:#fff}
  .hero-content{padding-top:max(112px,29.2vw)}
  .hero h1,html[data-theme=dark] .hero h1{padding-bottom:30vw}
 }
+
+
+/* Smooth stepped opening wipe and coordinated footer reveal. */
+.intro-reveal{
+ position:fixed;inset:0;z-index:1000;display:grid;place-items:center;overflow:hidden;
+ background:#292929;pointer-events:none;
+ clip-path:polygon(0 0,100% 0,100% 100%,96% 100%,96% 100%,73% 100%,73% 100%,50% 100%,50% 100%,27% 100%,27% 100%,4% 100%,4% 100%,0 100%);
+ animation:intro-cover-reveal 2.08s cubic-bezier(.72,0,.24,1) forwards
+}
+.intro-mark{
+ position:relative;z-index:1;color:#fff;font-size:clamp(96px,15vw,300px);font-weight:800;line-height:1;
+ letter-spacing:-.095em;white-space:nowrap;animation:intro-wordmark-exit .72s 1.05s cubic-bezier(.65,0,.3,1) both
+}
+.intro-mark span{color:#1c79ea}
+@keyframes intro-cover-reveal{
+ 0%,8%{clip-path:polygon(0 0,100% 0,100% 100%,96% 100%,96% 100%,73% 100%,73% 100%,50% 100%,50% 100%,27% 100%,27% 100%,4% 100%,4% 100%,0 100%)}
+ 34%{clip-path:polygon(0 0,100% 0,100% 97%,96% 97%,96% 96%,73% 96%,73% 94%,50% 94%,50% 92%,27% 92%,27% 87%,4% 87%,4% 73%,0 73%)}
+ 58%{clip-path:polygon(0 0,100% 0,100% 97%,96% 97%,96% 95%,73% 95%,73% 90%,50% 90%,50% 83%,27% 83%,27% 69%,4% 69%,4% 42%,0 42%)}
+ 82%{clip-path:polygon(0 0,100% 0,100% 63%,96% 63%,96% 56%,73% 56%,73% 42%,50% 42%,50% 31%,27% 31%,27% 7%,4% 7%,4% 0,0 0)}
+ 100%{clip-path:polygon(0 0,100% 0,100% 0,96% 0,96% 0,73% 0,73% 0,50% 0,50% 0,27% 0,27% 0,4% 0,4% 0,0 0)}
+}
+@keyframes intro-wordmark-exit{
+ 0%,12%{opacity:1;transform:translateY(0) scale(1)}
+ 100%{opacity:0;transform:translateY(-68vh) scale(.9)}
+}
+.footer-top.reveal.visible>div:first-child{animation:footer-column-in .86s cubic-bezier(.16,1,.3,1) both}
+.footer-top.reveal.visible>.footer-links{animation:footer-column-in .86s .14s cubic-bezier(.16,1,.3,1) both}
+.footer-top .footer-links a{opacity:0;transform:translateY(14px)}
+.footer-top.reveal.visible .footer-links a{animation:footer-link-in .58s cubic-bezier(.16,1,.3,1) both}
+.footer-top.reveal.visible .footer-links a:nth-of-type(1){animation-delay:.25s}
+.footer-top.reveal.visible .footer-links a:nth-of-type(2){animation-delay:.33s}
+.footer-top.reveal.visible .footer-links a:nth-of-type(3){animation-delay:.41s}
+.footer-top.reveal.visible .footer-links a:nth-of-type(4){animation-delay:.49s}
+.footer-top.reveal.visible .footer-links a:nth-of-type(5){animation-delay:.57s}
+.footer-top.reveal.visible .footer-arrow{animation:footer-arrow-in .78s .26s cubic-bezier(.16,1,.3,1) both}
+.footer-signature.reveal{clip-path:inset(0 100% 0 0);transition:opacity .95s ease,transform .95s cubic-bezier(.16,1,.3,1),clip-path 1.25s .08s cubic-bezier(.16,1,.3,1)}
+.footer-signature.reveal.visible{clip-path:inset(0)}
+@keyframes footer-column-in{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes footer-link-in{to{opacity:1;transform:translateY(0)}}
+@keyframes footer-arrow-in{from{opacity:0;transform:translate(-12px,8px) rotate(-30deg) scale(.86)}to{opacity:1;transform:translate(0) rotate(0) scale(1)}}
+@media(prefers-reduced-motion:reduce){
+ .intro-reveal{display:none!important}
+ .footer-top.reveal.visible>div,.footer-top.reveal.visible>.footer-links,.footer-top.reveal.visible .footer-links a,.footer-top.reveal.visible .footer-arrow{animation:none!important;opacity:1;transform:none}
+ .footer-signature.reveal,.footer-signature.reveal.visible{clip-path:none;transition:none}
+}
