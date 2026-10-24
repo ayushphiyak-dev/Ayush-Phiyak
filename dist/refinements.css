@@ -523,3 +523,15 @@ html[data-theme=dark] .hero-click{color:#fff}
  .hero-content{padding-top:max(112px,29.2vw)}
  .hero h1,html[data-theme=dark] .hero h1{padding-bottom:30vw}
 }
+
+/* Prevent narrow and desktop-mode viewports from exposing horizontal page overflow. */
+html,body{max-width:100%;overflow-x:clip}
+body,main{min-width:0}
+@media (min-width:701px) and (max-width:1100px){
+ .display,.branding .display{max-width:100%;font-size:clamp(64px,13.2vw,136px);line-height:1}
+ .campaigns .display{max-width:100%;font-size:clamp(54px,8.8vw,92px);line-height:1.05}
+}
+@media (max-width:360px){
+ .display,.branding .display{font-size:clamp(34px,13.3vw,48px);line-height:1.05}
+ .campaigns .display{font-size:clamp(32px,11vw,42px);line-height:1.08}
+}
