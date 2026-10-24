@@ -525,56 +525,44 @@ html[data-theme=dark] .hero-click{color:#fff}
 }
 
 
-/* Branded opening reveal and a more expressive footer entrance. */
+/* Smooth stepped opening wipe and coordinated footer reveal. */
 .intro-reveal{
- position:fixed;inset:0;z-index:1000;display:grid;
- grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr));
- overflow:hidden;pointer-events:none;animation:intro-hide 1ms 1.52s forwards
+ position:fixed;inset:0;z-index:1000;display:grid;place-items:center;overflow:hidden;
+ background:#292929;pointer-events:none;
+ clip-path:polygon(0 0,100% 0,100% 100%,96% 100%,96% 100%,73% 100%,73% 100%,50% 100%,50% 100%,27% 100%,27% 100%,4% 100%,4% 100%,0 100%);
+ animation:intro-cover-reveal 2.08s cubic-bezier(.72,0,.24,1) forwards
 }
 .intro-mark{
- position:absolute;z-index:2;top:-.08em;left:50%;transform:translateX(-50%);
- color:#fff;font-size:clamp(92px,15vw,250px);font-weight:800;line-height:1;
- letter-spacing:-.095em;white-space:nowrap;animation:intro-mark-out 1.38s cubic-bezier(.2,.72,.28,1) both
+ position:relative;z-index:1;color:#fff;font-size:clamp(96px,15vw,300px);font-weight:800;line-height:1;
+ letter-spacing:-.095em;white-space:nowrap;animation:intro-wordmark-exit .72s 1.05s cubic-bezier(.65,0,.3,1) both
 }
 .intro-mark span{color:#1c79ea}
-.intro-tile{display:block;background:#292929;animation:intro-panel-out .68s cubic-bezier(.76,0,.24,1) var(--intro-delay) forwards}
-.intro-tile:nth-child(2){--intro-delay:.25s}
-.intro-tile:nth-child(3){--intro-delay:.33s}
-.intro-tile:nth-child(4){--intro-delay:.41s}
-.intro-tile:nth-child(5){--intro-delay:.49s}
-.intro-tile:nth-child(6){--intro-delay:.32s}
-.intro-tile:nth-child(7){--intro-delay:.4s}
-.intro-tile:nth-child(8){--intro-delay:.48s}
-.intro-tile:nth-child(9){--intro-delay:.56s}
-.intro-tile:nth-child(10){--intro-delay:.39s}
-.intro-tile:nth-child(11){--intro-delay:.47s}
-.intro-tile:nth-child(12){--intro-delay:.55s}
-.intro-tile:nth-child(13){--intro-delay:.63s}
-.intro-tile:nth-child(odd){animation-name:intro-panel-up}
-.intro-tile:nth-child(even){animation-name:intro-panel-down}
-@keyframes intro-mark-out{
- 0%{opacity:0;transform:translate(-50%,22px) scale(.82)}
- 17%,57%{opacity:1;transform:translate(-50%,0) scale(1)}
- 100%{opacity:0;transform:translate(-50%,-18px) scale(.94)}
+@keyframes intro-cover-reveal{
+ 0%,8%{clip-path:polygon(0 0,100% 0,100% 100%,96% 100%,96% 100%,73% 100%,73% 100%,50% 100%,50% 100%,27% 100%,27% 100%,4% 100%,4% 100%,0 100%)}
+ 34%{clip-path:polygon(0 0,100% 0,100% 97%,96% 97%,96% 96%,73% 96%,73% 94%,50% 94%,50% 92%,27% 92%,27% 87%,4% 87%,4% 73%,0 73%)}
+ 58%{clip-path:polygon(0 0,100% 0,100% 97%,96% 97%,96% 95%,73% 95%,73% 90%,50% 90%,50% 83%,27% 83%,27% 69%,4% 69%,4% 42%,0 42%)}
+ 82%{clip-path:polygon(0 0,100% 0,100% 63%,96% 63%,96% 56%,73% 56%,73% 42%,50% 42%,50% 31%,27% 31%,27% 7%,4% 7%,4% 0,0 0)}
+ 100%{clip-path:polygon(0 0,100% 0,100% 0,96% 0,96% 0,73% 0,73% 0,50% 0,50% 0,27% 0,27% 0,4% 0,4% 0,0 0)}
 }
-@keyframes intro-panel-up{to{transform:translateY(-102%)}}
-@keyframes intro-panel-down{to{transform:translateY(102%)}}
-@keyframes intro-hide{to{visibility:hidden}}
-.footer-top.reveal.visible>div:first-child{animation:footer-column-in .75s cubic-bezier(.2,.8,.2,1) both}
-.footer-top.reveal.visible>.footer-links{animation:footer-column-in .75s .12s cubic-bezier(.2,.8,.2,1) both}
-.footer-top .footer-links a{opacity:0;transform:translateY(12px)}
-.footer-top.reveal.visible .footer-links a{animation:footer-link-in .42s cubic-bezier(.2,.8,.2,1) both}
-.footer-top.reveal.visible .footer-links a:nth-of-type(1){animation-delay:.2s}
-.footer-top.reveal.visible .footer-links a:nth-of-type(2){animation-delay:.27s}
-.footer-top.reveal.visible .footer-links a:nth-of-type(3){animation-delay:.34s}
-.footer-top.reveal.visible .footer-links a:nth-of-type(4){animation-delay:.41s}
-.footer-top.reveal.visible .footer-links a:nth-of-type(5){animation-delay:.48s}
-.footer-top.reveal.visible .footer-arrow{animation:footer-arrow-in .62s .22s cubic-bezier(.2,.8,.2,1) both}
-.footer-signature.reveal{clip-path:inset(0 100% 0 0);transition:opacity .85s ease,transform .85s cubic-bezier(.2,.8,.2,1),clip-path 1.05s .08s cubic-bezier(.2,.8,.2,1)}
+@keyframes intro-wordmark-exit{
+ 0%,12%{opacity:1;transform:translateY(0) scale(1)}
+ 100%{opacity:0;transform:translateY(-68vh) scale(.9)}
+}
+.footer-top.reveal.visible>div:first-child{animation:footer-column-in .86s cubic-bezier(.16,1,.3,1) both}
+.footer-top.reveal.visible>.footer-links{animation:footer-column-in .86s .14s cubic-bezier(.16,1,.3,1) both}
+.footer-top .footer-links a{opacity:0;transform:translateY(14px)}
+.footer-top.reveal.visible .footer-links a{animation:footer-link-in .58s cubic-bezier(.16,1,.3,1) both}
+.footer-top.reveal.visible .footer-links a:nth-of-type(1){animation-delay:.25s}
+.footer-top.reveal.visible .footer-links a:nth-of-type(2){animation-delay:.33s}
+.footer-top.reveal.visible .footer-links a:nth-of-type(3){animation-delay:.41s}
+.footer-top.reveal.visible .footer-links a:nth-of-type(4){animation-delay:.49s}
+.footer-top.reveal.visible .footer-links a:nth-of-type(5){animation-delay:.57s}
+.footer-top.reveal.visible .footer-arrow{animation:footer-arrow-in .78s .26s cubic-bezier(.16,1,.3,1) both}
+.footer-signature.reveal{clip-path:inset(0 100% 0 0);transition:opacity .95s ease,transform .95s cubic-bezier(.16,1,.3,1),clip-path 1.25s .08s cubic-bezier(.16,1,.3,1)}
 .footer-signature.reveal.visible{clip-path:inset(0)}
-@keyframes footer-column-in{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes footer-column-in{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 @keyframes footer-link-in{to{opacity:1;transform:translateY(0)}}
-@keyframes footer-arrow-in{from{opacity:0;transform:translate(-10px,8px) rotate(-35deg) scale(.82)}to{opacity:1;transform:translate(0) rotate(0) scale(1)}}
+@keyframes footer-arrow-in{from{opacity:0;transform:translate(-12px,8px) rotate(-30deg) scale(.86)}to{opacity:1;transform:translate(0) rotate(0) scale(1)}}
 @media(prefers-reduced-motion:reduce){
  .intro-reveal{display:none!important}
  .footer-top.reveal.visible>div,.footer-top.reveal.visible>.footer-links,.footer-top.reveal.visible .footer-links a,.footer-top.reveal.visible .footer-arrow{animation:none!important;opacity:1;transform:none}
